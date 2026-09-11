@@ -22,7 +22,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Edit **`src/content/site.ts`**. That file owns:
 
-- Name, role, tagline, location, availability, and email
+- Name, role, tagline, city-level location (not a street address), availability, and email
+- Public contact is email only — do not add a phone number
 - Navigation labels and section anchors
 - About copy and facts
 - Featured project (title, narrative, highlights, tags, optional links)

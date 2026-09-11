@@ -50,8 +50,10 @@ export type SiteContent = {
   shortName: string;
   role: string;
   tagline: string;
+  /** City-level only (e.g. Miami Beach, FL). Never a street address. */
   location: string;
   availability: string;
+  /** Public contact channel. Do not add a phone number to this site. */
   email: string;
   siteUrl: string;
   nav: NavItem[];
@@ -100,6 +102,10 @@ export type SiteContent = {
   };
 };
 
+/**
+ * Public site copy. Contact is email only (`alex@4142mb.com`).
+ * Keep location at city level. Do not add a phone number or street address.
+ */
 export const site: SiteContent = {
   name: "Alex Lopez",
   shortName: "AL",
@@ -264,7 +270,7 @@ export const site: SiteContent = {
   contact: {
     title: "Let’s talk",
     intro:
-      "Roles, operations problems, or a question about a project — write to alex@4142mb.com. The form below stays in the browser and does not send to a server.",
+      "Roles, operations problems, or a question about a project — email alex@4142mb.com. The form below stays in the browser and does not send to a server.",
     formNote:
       "Messages are not delivered anywhere. Use the email link if you want this to leave your machine.",
     successTitle: "Saved locally — nothing was sent.",
