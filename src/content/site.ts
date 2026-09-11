@@ -105,9 +105,10 @@ export const site: SiteContent = {
   shortName: "AL",
   role: "Python · AI · data",
   tagline:
-    "Automation agents, Python, SQL, Power BI, and pandas — with 15+ years of trade-ops domain expertise behind the stack.",
+    "Technology-forward stack: AI-driven automation (n8n, APIs, agents, multi-model workflows), growing Python for financial data, plus SQL, Power BI, and pandas — on 15+ years of trade-ops experience.",
   location: "Miami Beach, FL",
-  availability: "AI-driven workflows, financial data, and systems that survive a real desk.",
+  availability:
+    "AI + data mindset: agents, process automation, and financial datasets — not a side hobby on a finance resume.",
   email: "alex@4142mb.com",
   siteUrl: "https://4142mb.com",
   nav: [
@@ -224,7 +225,8 @@ export const site: SiteContent = {
   },
   skills: {
     title: "Skills",
-    intro: "First-class stack, then domain and web training.",
+    intro:
+      "First-class: AI / Automation, Python, SQL, Power BI, and pandas. Then the desk tools and 4Geeks web training (HTML, CSS, Java).",
     featured: [
       "AI / Automation",
       "Python",

@@ -21,11 +21,11 @@ export function Skills() {
           </p>
         </div>
 
-        <ul className="mt-8 flex flex-wrap gap-2">
+        <ul className="mt-8 flex flex-wrap gap-3">
           {site.skills.featured.map((item) => (
             <li
               key={item}
-              className="mono rounded-md border border-accent bg-accent-soft px-3 py-1.5 text-sm text-ink"
+              className="mono rounded-md border-2 border-accent bg-accent-soft px-4 py-2 text-base font-medium text-ink"
             >
               {item}
             </li>

@@ -50,6 +50,10 @@ export function Hero() {
               <dt className="text-muted">based</dt>
               <dd className="mt-1 text-ink">{site.location}</dd>
             </div>
+            <div>
+              <dt className="text-muted">stack</dt>
+              <dd className="mt-1 text-ink">{site.skills.featured.join(" · ")}</dd>
+            </div>
           </dl>
         </aside>
       </div>
