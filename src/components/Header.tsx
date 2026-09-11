@@ -24,32 +24,29 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-bg/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+    <header className="sticky top-0 z-40 border-b border-line bg-bg/85 backdrop-blur-md">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5 sm:px-8">
         <a
           href="#top"
-          className="group flex items-center gap-3 text-ink no-underline"
+          className="mono group flex items-center gap-2 text-sm text-ink no-underline"
         >
-          <span
-            aria-hidden="true"
-            className="display grid h-9 w-9 place-items-center rounded-md bg-ink text-sm font-medium text-bg transition-colors group-hover:bg-accent"
-          >
-            {site.shortName}
+          <span aria-hidden="true" className="text-accent">
+            {"{}"}
           </span>
-          <span className="text-sm font-medium tracking-tight">{site.name}</span>
+          <span>{site.name.toLowerCase().replace(" ", ".")}</span>
         </a>
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center gap-6 md:flex"
         >
           {site.nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-muted no-underline transition-colors hover:text-ink"
+              className="mono text-xs tracking-wide text-muted no-underline transition-colors hover:text-ink"
             >
-              {item.label}
+              {item.label.toLowerCase()}
             </a>
           ))}
           <ThemeToggle />
@@ -59,7 +56,7 @@ export function Header() {
           <ThemeToggle />
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-elevated"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line bg-elevated"
             aria-expanded={open}
             aria-controls={menuId}
             onClick={() => setOpen((value) => !value)}
@@ -91,15 +88,15 @@ export function Header() {
         hidden={!open}
         className="border-t border-line bg-bg md:hidden"
       >
-        <nav aria-label="Mobile" className="flex flex-col px-5 py-4">
+        <nav aria-label="Mobile" className="flex flex-col px-5 py-3">
           {site.nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="border-b border-line py-3 text-base text-ink no-underline last:border-b-0"
+              className="mono border-b border-line py-3 text-sm text-ink no-underline last:border-b-0"
               onClick={() => setOpen(false)}
             >
-              {item.label}
+              {item.label.toLowerCase()}
             </a>
           ))}
         </nav>

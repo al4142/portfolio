@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import { Figtree, Fraunces, IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { site } from "@/content/site";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
-const figtree = Figtree({
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
   display: "swap",
 });
 
@@ -48,13 +43,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${figtree.variable} ${fraunces.variable} ${plexMono.variable}`}
+      className={`${plexSans.variable} ${plexMono.variable}`}
       suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
-      <body className="min-h-dvh antialiased">
+      <body className="relative min-h-dvh antialiased">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

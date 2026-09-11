@@ -7,50 +7,41 @@ export function Skills() {
       aria-labelledby="skills-heading"
       className="border-b border-line"
     >
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <div className="max-w-2xl">
-          <p className="mono text-xs tracking-[0.22em] text-muted uppercase">
-            04
-          </p>
+          <p className="mono text-xs text-accent">04 / skills.ts</p>
           <h2
             id="skills-heading"
-            className="display mt-3 text-3xl tracking-tight sm:text-4xl"
+            className="display mt-2 text-2xl font-semibold tracking-tight sm:text-3xl"
           >
             {site.skills.title}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted">
+          <p className="mt-3 text-base leading-relaxed text-muted">
             {site.skills.intro}
           </p>
         </div>
 
-        <ul className="mt-10 flex flex-wrap gap-3">
+        <ul className="mt-8 flex flex-wrap gap-2">
           {site.skills.featured.map((item) => (
             <li
               key={item}
-              className="rounded-full border border-accent/40 bg-accent-soft px-4 py-2 text-sm font-medium text-ink"
+              className="mono rounded-md border border-accent bg-accent-soft px-3 py-1.5 text-sm text-ink"
             >
               {item}
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
           {site.skills.groups.map((group) => (
-            <div
-              key={group.title}
-              className="rounded-2xl border border-line bg-elevated p-6"
-            >
-              <h3 className="display text-xl tracking-tight">{group.title}</h3>
-              <ul className="mt-5 space-y-2">
+            <div key={group.title}>
+              <h3 className="mono text-xs text-muted">{group.title}</h3>
+              <ul className="mt-3 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 text-sm text-ink"
+                    className="mono rounded-md border border-line bg-elevated px-2.5 py-1 text-[11px] text-ink"
                   >
-                    <span
-                      aria-hidden="true"
-                      className="h-1.5 w-1.5 rounded-full bg-accent"
-                    />
                     {item}
                   </li>
                 ))}

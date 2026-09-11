@@ -3,31 +3,31 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #f3eee4;
-  --bg-elevated: #ebe4d4;
-  --ink: #1c1814;
-  --ink-muted: #5e554b;
-  --line: #d2c6b2;
-  --accent: #b5441d;
-  --accent-hover: #933716;
-  --accent-soft: #f0d8c4;
-  --forest: #2c4a3c;
-  --highlight: #e7d4a4;
-  --grain: rgba(28, 24, 20, 0.045);
+  --bg: #f3f3ef;
+  --bg-elevated: #e8e8e2;
+  --ink: #111111;
+  --ink-muted: #5a5a54;
+  --line: #cfcfc6;
+  --accent: #0f7a4a;
+  --accent-hover: #0b5f39;
+  --accent-soft: #d4f0e2;
+  --forest: #0f7a4a;
+  --highlight: #b8f0cf;
+  --grain: rgba(17, 17, 17, 0.04);
 }
 
 .dark {
-  --bg: #12100d;
-  --bg-elevated: #1c1914;
-  --ink: #f2eadc;
-  --ink-muted: #b3a592;
-  --line: #3a342b;
-  --accent: #e07a42;
-  --accent-hover: #f0945c;
-  --accent-soft: #3a2418;
-  --forest: #8fbfa4;
-  --highlight: #3a2e1a;
-  --grain: rgba(242, 234, 220, 0.035);
+  --bg: #0b0c0b;
+  --bg-elevated: #151615;
+  --ink: #ecece6;
+  --ink-muted: #9b9b93;
+  --line: #2b2d2b;
+  --accent: #7ee0a3;
+  --accent-hover: #9aebba;
+  --accent-soft: #123322;
+  --forest: #7ee0a3;
+  --highlight: #1c3d2a;
+  --grain: rgba(236, 236, 230, 0.04);
 }
 
 @theme inline {
@@ -41,7 +41,7 @@
   --color-accent-soft: var(--accent-soft);
   --color-forest: var(--forest);
   --color-highlight: var(--highlight);
-  --font-display: var(--font-display);
+  --font-display: var(--font-sans);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
 }
@@ -80,16 +80,17 @@ body::before {
   pointer-events: none;
   position: fixed;
   inset: 0;
-  z-index: 50;
-  opacity: 1;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  mix-blend-mode: multiply;
-  opacity: 0.11;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.28;
+  mask-image: radial-gradient(ellipse at top, #000 40%, transparent 75%);
 }
 
 .dark body::before {
-  mix-blend-mode: overlay;
-  opacity: 0.16;
+  opacity: 0.18;
 }
 
 ::selection {
@@ -103,8 +104,8 @@ body::before {
 }
 
 .display {
-  font-family: var(--font-display), ui-serif, Georgia, serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.04em;
 }
 
 .mono {

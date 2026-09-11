@@ -58,6 +58,7 @@ export type SiteContent = {
   social: SocialLink[];
   hero: {
     eyebrow: string;
+    headline: string;
     ctaPrimary: { label: string; href: string };
     ctaSecondary: { label: string; href: string };
   };
@@ -102,29 +103,29 @@ export type SiteContent = {
 export const site: SiteContent = {
   name: "Alex Lopez",
   shortName: "AL",
-  role: "Trade operations · AI & data",
+  role: "Python · AI · data",
   tagline:
-    "Fifteen-plus years across hedge funds, credit, and asset management — now building an AI and data stack on top of that floor experience: automation agents, Python, SQL, Power BI, and pandas.",
+    "Automation agents, Python, SQL, Power BI, and pandas — with 15+ years of trade-ops domain expertise behind the stack.",
   location: "Miami Beach, FL",
-  availability:
-    "Technology-forward ops: AI-driven workflows, financial data, and the trade lifecycle.",
+  availability: "AI-driven workflows, financial data, and systems that survive a real desk.",
   email: "alex@4142mb.com",
   siteUrl: "https://4142mb.com",
   nav: [
     { label: "About", href: "#about" },
-    { label: "Work", href: "#work" },
+    { label: "Projects", href: "#work" },
     { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
     { label: "Contact", href: "#contact" },
   ],
   social: [{ label: "Email", href: "mailto:alex@4142mb.com" }],
   hero: {
-    eyebrow: "Miami Beach · Operations & systems",
-    ctaPrimary: { label: "View work", href: "#work" },
+    eyebrow: "alex.lopez // miami-beach",
+    headline: "Building with Python, AI, and data.",
+    ctaPrimary: { label: "View projects", href: "#work" },
     ctaSecondary: { label: "Contact", href: "#contact" },
   },
   about: {
-    title: "A bit about me",
+    title: "About",
     paragraphs: [
       "I work the full trade lifecycle — equities, fixed income, derivatives, and FX, including APAC — from execution support through settlement and reconciliation. Bloomberg and expert Excel are still daily tools. Alongside that, I build AI-driven automation: n8n and API workflows, agents, and multi-model process automation, with growing Python for financial data and the same operational problems.",
       "The data side of that stack is first-class for me — SQL, Power BI, and pandas — not an afterthought on a finance resume. Off the desk, the same systems habit showed up on a Fronius robotic welding cell (jig, robot, electrical, production rollout) and in full-stack training at 4Geeks Academy (HTML, CSS, and Java).",
@@ -132,14 +133,14 @@ export const site: SiteContent = {
     ],
     facts: [
       { label: "Based", value: "Miami Beach, FL" },
-      { label: "Focus", value: "AI, data, trade ops" },
+      { label: "Focus", value: "Python, AI, data" },
       { label: "Background", value: "Hedge funds, credit, AM" },
     ],
   },
   projects: {
-    title: "Featured project",
+    title: "Projects",
     intro:
-      "A standout technical delivery outside the office: industrial automation from fixture design through production rollout.",
+      "Case-study style write-up of a real build. Industrial automation from fixture design through production rollout.",
     items: [
       {
         id: "fronius-welder",
@@ -166,53 +167,39 @@ export const site: SiteContent = {
   },
   experience: {
     title: "Experience",
-    intro:
-      "Operations, accounting, and trading-support roles across funds and asset managers. Dates and titles are as on the resume.",
+    intro: "Domain context — funds and asset managers. Titles and dates as on the resume.",
     items: [
       {
         company: "Eastern Harbour Group",
         role: "Senior Project Manager, Accounting & Operations",
         dates: "Jan 2023 – Present",
         bullets: [
-          "Leads accounting and operations projects across the trade lifecycle",
-          "Tightens workflows with process design and automation where it pays off",
+          "Accounting/ops projects across the trade lifecycle; process and automation design",
         ],
       },
       {
         company: "Newland Capital Group",
         role: "Senior Accounting Analyst",
         dates: "Feb 2022 – Jan 2023",
-        bullets: [
-          "Accounting analysis in support of investment operations",
-          "Settlement, reconciliation, and reporting",
-        ],
+        bullets: ["Investment-ops accounting: settlement, reconciliation, reporting"],
       },
       {
         company: "Inflo Capital Partners",
         role: "Director, Finance and Trading Operations",
         dates: "Apr 2020 – Jan 2022",
-        bullets: [
-          "Directed finance and trading operations",
-          "Day-to-day trade support, settlement, and operational controls",
-        ],
+        bullets: ["Finance and trading ops: trade support, settlement, controls"],
       },
       {
         company: "TCA Global Credit Master Fund",
         role: "VP Special Assets / CRO",
         dates: "Nov 2017 – Feb 2020",
-        bullets: [
-          "Vice president for special assets and chief risk officer",
-          "Credit-fund operations and risk processes",
-        ],
+        bullets: ["Special assets and CRO — credit-fund ops and risk processes"],
       },
       {
         company: "CRL Management / Napeague Capital",
         role: "Senior Analyst, Trading and Operations",
         dates: "Aug 2005 – Nov 2017",
-        bullets: [
-          "Trading and operations analyst across a long tenure",
-          "Full trade-lifecycle support and desk-adjacent systems work",
-        ],
+        bullets: ["Trading and operations analyst; full lifecycle and desk-adjacent systems"],
       },
     ],
   },
@@ -237,8 +224,7 @@ export const site: SiteContent = {
   },
   skills: {
     title: "Skills",
-    intro:
-      "AI, automation, and the data stack sit up front. Markets and web training sit beside them — edit the groups in the site config.",
+    intro: "First-class stack, then domain and web training.",
     featured: [
       "AI / Automation",
       "Python",

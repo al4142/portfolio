@@ -37,9 +37,10 @@ export function ContactForm() {
     return (
       <div
         role="status"
-        className="rounded-2xl border border-line bg-elevated p-6"
+        className="border border-line bg-elevated p-5"
       >
-        <p className="display text-2xl tracking-tight">
+        <p className="mono text-xs text-accent">{"// ok"}</p>
+        <p className="display mt-2 text-xl font-semibold tracking-tight">
           {site.contact.successTitle}
         </p>
         <p className="mt-3 text-sm leading-relaxed text-muted">
@@ -47,60 +48,54 @@ export function ContactForm() {
         </p>
         <button
           type="button"
-          className="mt-6 text-sm font-medium text-accent underline-offset-4 hover:underline"
+          className="mono mt-5 text-xs text-accent underline-offset-4 hover:underline"
           onClick={() => setStatus("idle")}
         >
-          Write another note
+          write another note
         </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="space-y-5">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={onSubmit} noValidate className="space-y-4">
+      <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-sm">
-          <span className="mono text-[11px] tracking-[0.16em] text-muted uppercase">
-            Name
-          </span>
+          <span className="mono text-[11px] text-muted">name</span>
           <input
             name="name"
             type="text"
             autoComplete="name"
             required
-            className="mt-2 h-12 w-full rounded-xl border border-line bg-elevated px-3 text-ink placeholder:text-muted/70"
+            className="mt-2 h-11 w-full rounded-md border border-line bg-elevated px-3 text-ink placeholder:text-muted/70"
             placeholder="Your name"
           />
         </label>
         <label className="block text-sm">
-          <span className="mono text-[11px] tracking-[0.16em] text-muted uppercase">
-            Email
-          </span>
+          <span className="mono text-[11px] text-muted">email</span>
           <input
             name="email"
             type="email"
             autoComplete="email"
             required
-            className="mt-2 h-12 w-full rounded-xl border border-line bg-elevated px-3 text-ink placeholder:text-muted/70"
+            className="mt-2 h-11 w-full rounded-md border border-line bg-elevated px-3 text-ink placeholder:text-muted/70"
             placeholder="you@example.com"
           />
         </label>
       </div>
       <label className="block text-sm">
-        <span className="mono text-[11px] tracking-[0.16em] text-muted uppercase">
-          Message
-        </span>
+        <span className="mono text-[11px] text-muted">message</span>
         <textarea
           name="message"
           required
           rows={5}
-          className="mt-2 w-full resize-y rounded-xl border border-line bg-elevated px-3 py-3 text-ink placeholder:text-muted/70"
+          className="mt-2 w-full resize-y rounded-md border border-line bg-elevated px-3 py-3 text-ink placeholder:text-muted/70"
           placeholder="What are you working on?"
         />
       </label>
 
       {status === "error" ? (
-        <p role="alert" className="text-sm text-accent">
+        <p role="alert" className="mono text-xs text-accent">
           {error}
         </p>
       ) : null}
@@ -108,9 +103,9 @@ export function ContactForm() {
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
-          className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-6 text-sm font-medium text-bg transition-colors hover:bg-accent"
+          className="inline-flex h-11 items-center justify-center rounded-md bg-ink px-5 font-mono text-sm text-bg transition-colors hover:bg-accent"
         >
-          Send note
+          send note
         </button>
         <p className="max-w-xs text-xs leading-relaxed text-muted">
           {site.contact.formNote}
