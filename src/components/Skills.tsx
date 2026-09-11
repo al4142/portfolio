@@ -10,7 +10,7 @@ export function Skills() {
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
         <div className="max-w-2xl">
           <p className="mono text-xs tracking-[0.22em] text-muted uppercase">
-            03
+            04
           </p>
           <h2
             id="skills-heading"

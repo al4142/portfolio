@@ -25,9 +25,11 @@ Edit **`src/content/site.ts`**. That file owns:
 - Name, role, tagline, location, availability, and email
 - Navigation labels and section anchors
 - About copy and facts
-- Project titles, descriptions, tech tags, and optional links
+- Featured project (title, narrative, highlights, tags, optional links)
+- Experience entries (company, title, dates, short bullets)
+- Education and training
 - Skill groups
 - Contact copy (including the client-side form messages)
-- Footer note and social placeholders
+- Footer note and social links
 
 Theme colors and type live in `src/app/globals.css` and `src/app/layout.tsx`. The contact form validates in the browser and does not post to a backend — wire it to a form service or keep the email link if you want messages delivered.

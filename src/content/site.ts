@@ -18,9 +18,26 @@ export type Project = {
   title: string;
   summary: string;
   description: string;
-  year: string;
+  year?: string;
+  featured?: boolean;
   tags: string[];
+  highlights?: string[];
   links?: ProjectLink[];
+};
+
+export type ExperienceItem = {
+  company: string;
+  role: string;
+  dates: string;
+  bullets: string[];
+};
+
+export type EducationItem = {
+  school: string;
+  credential: string;
+  dates: string;
+  detail?: string;
+  href?: string;
 };
 
 export type SkillGroup = {
@@ -54,6 +71,16 @@ export type SiteContent = {
     intro: string;
     items: Project[];
   };
+  experience: {
+    title: string;
+    intro: string;
+    items: ExperienceItem[];
+  };
+  education: {
+    title: string;
+    intro: string;
+    items: EducationItem[];
+  };
   skills: {
     title: string;
     intro: string;
@@ -74,126 +101,179 @@ export type SiteContent = {
 export const site: SiteContent = {
   name: "Alex Lopez",
   shortName: "AL",
-  role: "Product engineer",
+  role: "Trade operations & finance",
   tagline:
-    "I design and build calm, useful software — interfaces people actually want to return to.",
-  location: "Portland, OR",
-  availability: "Open to selected freelance and full-time roles",
-  email: "hello@alexlopez.dev",
-  siteUrl: "https://alexlopez.dev",
+    "Fifteen-plus years across hedge funds, credit, and asset management — pairing full trade-lifecycle experience with automation, growing Python, and full-stack training.",
+  location: "Miami Beach, FL",
+  availability: "Technology-forward operations: settlement, controls, and workflow automation.",
+  email: "alex@4142mb.com",
+  siteUrl: "https://4142mb.com",
   nav: [
     { label: "About", href: "#about" },
     { label: "Work", href: "#work" },
+    { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
     { label: "Contact", href: "#contact" },
   ],
-  social: [
-    { label: "GitHub", href: "https://github.com/alexlopez" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/alexlopez" },
-    { label: "Bluesky", href: "https://bsky.app/profile/alexlopez.dev" },
-    { label: "Email", href: "mailto:hello@alexlopez.dev" },
-  ],
+  social: [{ label: "Email", href: "mailto:alex@4142mb.com" }],
   hero: {
-    eyebrow: "Portfolio / 2026",
+    eyebrow: "Miami Beach · Operations & systems",
     ctaPrimary: { label: "View work", href: "#work" },
     ctaSecondary: { label: "Contact", href: "#contact" },
   },
   about: {
     title: "A bit about me",
     paragraphs: [
-      "I’m a product engineer who likes the quiet parts of software: clear type, honest empty states, and systems that stay understandable after the first year.",
-      "Most recently I’ve been pairing design and implementation on tools for small teams — research workflows, editorial products, and the occasional map. I care as much about the handoff as the first commit.",
-      "When I’m not shipping, I’m usually walking the river trail, printing letterpress cards, or taking apart a recipe until it behaves.",
+      "I work the full trade lifecycle — equities, fixed income, derivatives, and FX, including APAC — from execution support through settlement and reconciliation. Bloomberg and expert Excel are daily tools; I also build automation workflows and am growing a Python practice around the same operational problems.",
+      "That systems habit shows up off the desk, too. I helped design and stand up a Fronius robotic welding cell — jig, robot, electrical, and production rollout — and completed full-stack web training at 4Geeks Academy (HTML, CSS, and Java).",
+      "I care about processes that stay understandable after the first year: clear controls, fewer manual breaks, and tools the team will actually use.",
     ],
     facts: [
-      { label: "Based", value: "Portland, OR" },
-      { label: "Focus", value: "Web apps, design systems" },
-      { label: "Working", value: "Remote-first" },
+      { label: "Based", value: "Miami Beach, FL" },
+      { label: "Focus", value: "Trade ops, automation" },
+      { label: "Background", value: "Hedge funds, credit, AM" },
     ],
   },
   projects: {
-    title: "Selected work",
+    title: "Featured project",
     intro:
-      "A short set of sample pieces. Swap these with your own titles, write-ups, and links in the site config.",
+      "A standout technical delivery outside the office: industrial automation from fixture design through production rollout.",
     items: [
       {
-        id: "lumen-ledger",
-        title: "Lumen Ledger",
-        summary: "Household finances without the spreadsheet dread.",
+        id: "fronius-welder",
+        title: "Fronius robotic welder",
+        summary: "Industrial automation — jig, robot, electrical, rollout.",
         description:
-          "A shared ledger for couples and roommates. Recurring bills, gentle forecasts, and a weekly digest that stays out of the way until something actually needs attention.",
-        year: "2025",
-        tags: ["Next.js", "TypeScript", "Postgres", "tRPC"],
-        links: [
-          { label: "Live", href: "https://example.com/lumen" },
-          { label: "Source", href: "https://github.com/alexlopez/lumen-ledger" },
+          "I helped put together a Fronius robotic welding system and stayed in the work from overall design through implementation. The cell had to hold a part, weld it consistently, and survive a real shop floor — not a slide deck.",
+        featured: true,
+        tags: [
+          "Industrial automation",
+          "Jig design",
+          "Robotics",
+          "Electrical",
+          "Production rollout",
+        ],
+        highlights: [
+          "Mechanical fixture and jig design so parts locate repeatably for the weld path",
+          "Robotic cell layout and implementation around a Fronius welding system",
+          "Electrical integration so power, sensors, and controls behaved as one unit",
+          "Production rollout — from build to a cell the floor could actually run",
+        ],
+      },
+    ],
+  },
+  experience: {
+    title: "Experience",
+    intro:
+      "Operations, accounting, and trading-support roles across funds and asset managers. Dates and titles are as on the resume.",
+    items: [
+      {
+        company: "Eastern Harbour Group",
+        role: "Senior Project Manager, Accounting & Operations",
+        dates: "Jan 2023 – Present",
+        bullets: [
+          "Leads accounting and operations projects across the trade lifecycle",
+          "Tightens workflows with process design and automation where it pays off",
         ],
       },
       {
-        id: "northwind-atlas",
-        title: "Northwind Atlas",
-        summary: "Field notes, mapped.",
-        description:
-          "A personal atlas for trips and neighborhood walks. Offline-first notes, hand-drawn layers, and a reading list that attaches to places instead of folders.",
-        year: "2025",
-        tags: ["React", "MapLibre", "SQLite", "PWA"],
-        links: [{ label: "Case study", href: "https://example.com/atlas" }],
-      },
-      {
-        id: "hearth-kitchen",
-        title: "Hearth Kitchen",
-        summary: "Recipes that remember how you cook.",
-        description:
-          "A small publishing tool for cooks who iterate. Versioned recipes, pantry-aware shopping lists, and a print stylesheet that looks like a well-used notebook.",
-        year: "2024",
-        tags: ["Next.js", "MDX", "Tailwind", "Playwright"],
-        links: [
-          { label: "Live", href: "https://example.com/hearth" },
-          { label: "Source", href: "https://github.com/alexlopez/hearth-kitchen" },
+        company: "Newland Capital Group",
+        role: "Senior Accounting Analyst",
+        dates: "Feb 2022 – Jan 2023",
+        bullets: [
+          "Accounting analysis in support of investment operations",
+          "Settlement, reconciliation, and reporting",
         ],
       },
       {
-        id: "signal-board",
-        title: "Signal Board",
-        summary: "Ops dashboards that read like a briefing.",
-        description:
-          "A status surface for on-call teams. Plain-language incidents, quiet hours, and charts that default to “what changed” instead of a wall of gauges.",
-        year: "2024",
-        tags: ["TypeScript", "Node", "Grafana", "Go"],
-        links: [{ label: "Write-up", href: "https://example.com/signal" }],
+        company: "Inflo Capital Partners",
+        role: "Director, Finance and Trading Operations",
+        dates: "Apr 2020 – Jan 2022",
+        bullets: [
+          "Directed finance and trading operations",
+          "Day-to-day trade support, settlement, and operational controls",
+        ],
+      },
+      {
+        company: "TCA Global Credit Master Fund",
+        role: "VP Special Assets / CRO",
+        dates: "Nov 2017 – Feb 2020",
+        bullets: [
+          "Vice president for special assets and chief risk officer",
+          "Credit-fund operations and risk processes",
+        ],
+      },
+      {
+        company: "CRL Management / Napeague Capital",
+        role: "Senior Analyst, Trading and Operations",
+        dates: "Aug 2005 – Nov 2017",
+        bullets: [
+          "Trading and operations analyst across a long tenure",
+          "Full trade-lifecycle support and desk-adjacent systems work",
+        ],
+      },
+    ],
+  },
+  education: {
+    title: "Education & training",
+    intro: "Finance degree, then a full-stack program focused on web fundamentals.",
+    items: [
+      {
+        school: "Florida International University",
+        credential: "BBA, Finance",
+        dates: "Aug 2001 – May 2006",
+      },
+      {
+        school: "4Geeks Academy",
+        credential: "Full-Stack Bootcamp",
+        dates: "2023",
+        detail:
+          "HTML, CSS, and Java. This cohort was before the program’s later AI course — web fundamentals only.",
+        href: "https://fl.4geeksacademy.com/en/programs/full-stack",
       },
     ],
   },
   skills: {
-    title: "Stack & craft",
+    title: "Skills",
     intro:
-      "Tools I reach for most often. The list is a starting point — edit the groups to match how you actually work.",
+      "Markets and operations first; automation and web training alongside. Edit the groups in the site config.",
     groups: [
       {
-        title: "Interface",
-        items: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Accessibility"],
+        title: "Operations",
+        items: [
+          "Trade ops & settlement",
+          "Bloomberg",
+          "CapitalIQ",
+          "Excel (expert)",
+          "QuickBooks",
+          "Leadership",
+        ],
       },
       {
-        title: "Systems",
-        items: ["Node.js", "PostgreSQL", "tRPC", "Prisma", "Redis"],
+        title: "Automation",
+        items: [
+          "Process automation",
+          "Python (growing)",
+          "AI/automation workflows (n8n, APIs)",
+        ],
       },
       {
-        title: "Practice",
-        items: ["Design systems", "Technical writing", "Playwright", "CI/CD", "Figma"],
+        title: "Web",
+        items: ["HTML", "CSS", "Java"],
       },
     ],
   },
   contact: {
     title: "Let’s talk",
     intro:
-      "New roles, collaborations, or a question about a project — drop a note. This form stays in the browser; it does not send to a server.",
+      "Roles, operations problems, or a question about a project — write to alex@4142mb.com. The form below stays in the browser and does not send to a server.",
     formNote:
       "Messages are not delivered anywhere. Use the email link if you want this to leave your machine.",
     successTitle: "Saved locally — nothing was sent.",
     successBody:
-      "This is a client-side demo. Copy your note, or open the email link in the sidebar to send it for real.",
+      "This form does not post anywhere. Copy your note, or open the email link to send it for real.",
   },
   footer: {
-    note: "Built with Next.js, TypeScript, and Tailwind CSS. Edit src/content/site.ts to make it yours.",
+    note: "Edit src/content/site.ts to update copy, roles, and links. Built with Next.js, TypeScript, and Tailwind CSS.",
   },
 };

@@ -7,7 +7,7 @@ export function Contact() {
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
         <div>
           <p className="mono text-xs tracking-[0.22em] text-muted uppercase">
-            04
+            06
           </p>
           <h2
             id="contact-heading"
