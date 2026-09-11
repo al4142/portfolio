@@ -28,7 +28,7 @@ Edit **`src/content/site.ts`**. That file owns:
 - Featured project (title, narrative, highlights, tags, optional links)
 - Experience entries (company, title, dates, short bullets)
 - Education and training
-- Skill groups
+- Featured skills and skill groups
 - Contact copy (including the client-side form messages)
 - Footer note and social links
 

@@ -23,7 +23,18 @@ export function Skills() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <ul className="mt-10 flex flex-wrap gap-3">
+          {site.skills.featured.map((item) => (
+            <li
+              key={item}
+              className="rounded-full border border-accent/40 bg-accent-soft px-4 py-2 text-sm font-medium text-ink"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
           {site.skills.groups.map((group) => (
             <div
               key={group.title}

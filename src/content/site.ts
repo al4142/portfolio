@@ -84,6 +84,7 @@ export type SiteContent = {
   skills: {
     title: string;
     intro: string;
+    featured: string[];
     groups: SkillGroup[];
   };
   contact: {
@@ -101,11 +102,12 @@ export type SiteContent = {
 export const site: SiteContent = {
   name: "Alex Lopez",
   shortName: "AL",
-  role: "Trade operations & finance",
+  role: "Trade operations · AI & data",
   tagline:
-    "Fifteen-plus years across hedge funds, credit, and asset management — pairing full trade-lifecycle experience with automation, growing Python, and full-stack training.",
+    "Fifteen-plus years across hedge funds, credit, and asset management — now building an AI and data stack on top of that floor experience: automation agents, Python, SQL, Power BI, and pandas.",
   location: "Miami Beach, FL",
-  availability: "Technology-forward operations: settlement, controls, and workflow automation.",
+  availability:
+    "Technology-forward ops: AI-driven workflows, financial data, and the trade lifecycle.",
   email: "alex@4142mb.com",
   siteUrl: "https://4142mb.com",
   nav: [
@@ -124,13 +126,13 @@ export const site: SiteContent = {
   about: {
     title: "A bit about me",
     paragraphs: [
-      "I work the full trade lifecycle — equities, fixed income, derivatives, and FX, including APAC — from execution support through settlement and reconciliation. Bloomberg and expert Excel are daily tools; I also build automation workflows and am growing a Python practice around the same operational problems.",
-      "That systems habit shows up off the desk, too. I helped design and stand up a Fronius robotic welding cell — jig, robot, electrical, and production rollout — and completed full-stack web training at 4Geeks Academy (HTML, CSS, and Java).",
-      "I care about processes that stay understandable after the first year: clear controls, fewer manual breaks, and tools the team will actually use.",
+      "I work the full trade lifecycle — equities, fixed income, derivatives, and FX, including APAC — from execution support through settlement and reconciliation. Bloomberg and expert Excel are still daily tools. Alongside that, I build AI-driven automation: n8n and API workflows, agents, and multi-model process automation, with growing Python for financial data and the same operational problems.",
+      "The data side of that stack is first-class for me — SQL, Power BI, and pandas — not an afterthought on a finance resume. Off the desk, the same systems habit showed up on a Fronius robotic welding cell (jig, robot, electrical, production rollout) and in full-stack training at 4Geeks Academy (HTML, CSS, and Java).",
+      "I care about processes that stay understandable after the first year: clear controls, fewer manual breaks, and tools the team will actually use. In Miami Beach I surf, race triathlons, and play tennis — useful pressure valves next to a desk that runs on exceptions.",
     ],
     facts: [
       { label: "Based", value: "Miami Beach, FL" },
-      { label: "Focus", value: "Trade ops, automation" },
+      { label: "Focus", value: "AI, data, trade ops" },
       { label: "Background", value: "Hedge funds, credit, AM" },
     ],
   },
@@ -236,30 +238,38 @@ export const site: SiteContent = {
   skills: {
     title: "Skills",
     intro:
-      "Markets and operations first; automation and web training alongside. Edit the groups in the site config.",
+      "AI, automation, and the data stack sit up front. Markets and web training sit beside them — edit the groups in the site config.",
+    featured: [
+      "AI / Automation",
+      "Python",
+      "SQL",
+      "Power BI",
+      "pandas",
+    ],
     groups: [
       {
-        title: "Operations",
+        title: "AI / Automation",
+        items: [
+          "AI-driven automation & agents",
+          "n8n, APIs, multi-model workflows",
+          "Process automation",
+          "Python (growing)",
+        ],
+      },
+      {
+        title: "Data",
+        items: ["SQL", "Power BI", "pandas", "Excel (expert)"],
+      },
+      {
+        title: "Markets & web",
         items: [
           "Trade ops & settlement",
           "Bloomberg",
           "CapitalIQ",
-          "Excel (expert)",
           "QuickBooks",
           "Leadership",
+          "HTML, CSS, Java",
         ],
-      },
-      {
-        title: "Automation",
-        items: [
-          "Process automation",
-          "Python (growing)",
-          "AI/automation workflows (n8n, APIs)",
-        ],
-      },
-      {
-        title: "Web",
-        items: ["HTML", "CSS", "Java"],
       },
     ],
   },
