@@ -9,7 +9,7 @@ export function Skills() {
     >
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <div className="max-w-2xl">
-          <p className="mono text-xs text-accent">04 / skills.ts</p>
+          <p className="mono text-xs text-accent">03 / skills.ts</p>
           <h2
             id="skills-heading"
             className="display mt-2 text-2xl font-semibold tracking-tight sm:text-3xl"

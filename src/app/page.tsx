@@ -18,8 +18,8 @@ export default function HomePage() {
         <Hero />
         <About />
         <Projects />
-        <Experience />
         <Skills />
+        <Experience />
         <Education />
         <Contact />
       </main>

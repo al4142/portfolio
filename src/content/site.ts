@@ -120,8 +120,8 @@ export const site: SiteContent = {
   nav: [
     { label: "About", href: "#about" },
     { label: "Projects", href: "#work" },
-    { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
+    { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
   social: [{ label: "Email", href: "mailto:alex@4142mb.com" }],
@@ -134,8 +134,8 @@ export const site: SiteContent = {
   about: {
     title: "About",
     paragraphs: [
-      "I’m a trade operations and finance professional with 15+ years across hedge funds, credit, and asset management. I work the full trade lifecycle — equities, fixed income, derivatives, and FX, including APAC — from execution support through settlement and reconciliation. Bloomberg and expert Excel are daily tools. Alongside that, I build AI-driven automation: n8n and API workflows, agents, and multi-model process automation, with growing Python for financial data and the same operational problems.",
-      "The data side of that stack is first-class for me — SQL, Power BI, and pandas — not an afterthought on a finance resume. Off the desk, the same systems habit showed up on a Fronius robotic welding cell (jig, robot, electrical, production rollout) and in full-stack training at 4Geeks Academy (HTML, CSS, and Java).",
+      "I build AI-driven automation and a growing Python / data practice — n8n, APIs, agents, multi-model workflows, SQL, Power BI, and pandas. Trade operations is the domain behind that stack: 15+ years across hedge funds, credit, and asset management, full lifecycle (equities, fixed income, derivatives, FX including APAC), settlement, reconciliation, Bloomberg, and expert Excel.",
+      "Same systems habit off the desk: a Fronius robotic welding cell (jig, robot, electrical, production rollout) and full-stack training at 4Geeks Academy (HTML, CSS, and Java — 2023, web fundamentals).",
       "I care about processes that stay understandable after the first year: clear controls, fewer manual breaks, and tools the team will actually use. Based in Miami Beach, I surf, compete in triathlons, and play tennis.",
     ],
     facts: [
@@ -174,7 +174,7 @@ export const site: SiteContent = {
   },
   experience: {
     title: "Experience",
-    intro: "Domain context — funds and asset managers. Titles and dates as on the resume.",
+    intro: "Domain context. Titles and dates as on the resume.",
     items: [
       {
         company: "Eastern Harbour Group",

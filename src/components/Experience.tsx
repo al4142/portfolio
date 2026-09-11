@@ -9,7 +9,7 @@ export function Experience() {
     >
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
         <div className="max-w-2xl">
-          <p className="mono text-xs text-accent">03 / experience.log</p>
+          <p className="mono text-xs text-accent">04 / experience.log</p>
           <h2
             id="experience-heading"
             className="display mt-2 text-2xl font-semibold tracking-tight sm:text-3xl"
@@ -23,7 +23,7 @@ export function Experience() {
 
         <ol className="relative mt-10 border-l border-line pl-6">
           {site.experience.items.map((item) => (
-            <li key={`${item.company}-${item.dates}`} className="relative pb-8 last:pb-0">
+            <li key={`${item.company}-${item.dates}`} className="relative pb-5 last:pb-0">
               <span
                 aria-hidden="true"
                 className="absolute top-1.5 -left-[31px] h-2.5 w-2.5 rounded-full border border-accent bg-bg"
