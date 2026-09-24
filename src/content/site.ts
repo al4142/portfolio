@@ -147,7 +147,7 @@ export const site: SiteContent = {
   projects: {
     title: "Projects",
     intro:
-      "Two case studies: a robotic welder that scaled fence-panel throughput, and an operations platform for jobs, inventory, BOM, and P&L.",
+      "Three case studies: a robotic welder that scaled fence-panel throughput, an operations platform for jobs, inventory, BOM, and P&L, and brand-partnership automation for creator deals.",
     items: [
       {
         id: "fronius-welder",
@@ -196,6 +196,31 @@ export const site: SiteContent = {
           "Relocate and Site Walk job types",
           "Operator P&L and contacts",
           "Stack: Next.js, TypeScript, Prisma, Neon, and Vercel",
+        ],
+      },
+      {
+        id: "brand-partnership-automation",
+        title: "Brand Partnership Automation",
+        summary:
+          "End-to-end agentic loop for creator brand partnerships — negotiate, contract, briefing, calendar, and concepts — drafts for human approval, pricing rules in code.",
+        description:
+          "Designed and built Brand Partnership Automation as a five-step agentic loop for the creator–brand deal lifecycle. Negotiate: email intake, spam/legit vetting, scope extraction, availability check, creator consult, then back-and-forth on rate and terms using a deterministic pricing rulebook (floors, usage multipliers, deliverable baselines). Contract: pull final agreed terms into an internal deal record and archive it. Briefing: request the campaign brief, or send a structured questionnaire when the brand has none. Calendar: share a preliminary timeline and keep a living content calendar as creative lands. Concepts: draft concept and script in the creator’s voice against the brief; route creator then brand approvals; apply feedback with clear change notes; support production through final go-live. After the initial vetting pass, every outbound is a draft a human approves and sends — nothing goes to a brand on its own. Shared deal tracker holds state across the email thread. Chat Interested / Pass / Approve-counter is the human-in-the-loop surface.",
+        featured: true,
+        tags: [
+          "n8n",
+          "email",
+          "deal tracker",
+          "chat approvals",
+          "AI agents",
+          "HITL",
+        ],
+        highlights: [
+          "Five-step loop: Negotiate → Contract → Briefing → Calendar → Concepts",
+          "Email intake + legit/spam vetting before any engagement",
+          "Deal tracker as shared state across email threads",
+          "Chat Interested / Pass / Approve-counter human-in-the-loop",
+          "Draft-only replies after vetting — never auto-send to brands",
+          "Pricing rulebook in config/code, not free-form LLM judgment",
         ],
       },
     ],
