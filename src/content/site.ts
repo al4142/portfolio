@@ -134,7 +134,7 @@ export const site: SiteContent = {
   about: {
     title: "About",
     paragraphs: [
-      "I build AI-driven automation and a growing Python / data practice — n8n, APIs, agents, multi-model workflows, SQL, Power BI, and pandas. Trade operations is the domain behind that stack: 15+ years across hedge funds, credit, and asset management, full lifecycle (equities, fixed income, derivatives, FX), settlement, reconciliation, Bloomberg, and expert Excel.",
+      "I build AI-driven automation and a growing Python / data practice — n8n, APIs, agents, multi-model workflows, SQL, Power BI, and pandas. Trade operations is the domain behind that stack: 15+ years across hedge funds, credit, and asset management, full lifecycle (equities, fixed income, derivatives, FX), settlement, reconciliation, Bloomberg.",
       "Same systems habit off the desk: a Fronius robotic welding cell (jig, robot, electrical, production rollout) and full-stack training at 4Geeks Academy (HTML, CSS, and Java — 2023, web fundamentals).",
       "I care about processes that stay understandable after the first year: clear controls, fewer manual breaks, and tools the team will actually use. Based in Miami Beach, I surf, compete in triathlons, and play tennis.",
     ],
