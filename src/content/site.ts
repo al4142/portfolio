@@ -280,7 +280,7 @@ export const site: SiteContent = {
       },
       {
         title: "Data",
-        items: ["SQL", "Power BI", "pandas", "Excel (expert)"],
+        items: ["SQL", "Power BI", "pandas"],
       },
       {
         title: "Markets & web",
