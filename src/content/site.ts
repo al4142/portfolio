@@ -153,9 +153,9 @@ export const site: SiteContent = {
         id: "fronius-welder",
         title: "Fronius robotic welder",
         summary:
-          "Robotic welder for aluminum and steel fence panels — from ~15 to ~120 panels per day (~8× throughput).",
+          "Robotic welder for aluminum and steel fence panels — from ~15 to ~120 panels a day (~8×).",
         description:
-          "Designed, implemented, and commissioned a robotic welder for aluminum and steel fence panels for an industry-leading metal fabrication company. The cell removed production bottlenecks and improved throughput and scalability — from ~15 to ~120 panels per day (~8× throughput) — so idle material converted to revenue faster and the company strengthened its local leadership and market position.",
+          "Designed, implemented, and commissioned a robotic welding cell for aluminum and steel fence panels at an industry-leading metal fabricator. The cell cleared the production bottleneck and lifted output from ~15 to ~120 panels a day (~8×), turning idle stock into shipped product faster and reinforcing the company's lead in the local market.",
         featured: true,
         tags: [
           "Industrial automation",
@@ -165,20 +165,20 @@ export const site: SiteContent = {
           "Production rollout",
         ],
         highlights: [
-          "Designed, implemented, and commissioned a robotic welder for aluminum and steel fence panels",
-          "Built for an industry-leading metal fabrication company",
-          "Removed production bottlenecks and improved scalability so idle material converted to revenue faster",
-          "Throughput from ~15 to ~120 panels per day (~8× throughput)",
-          "Strengthened the company's local leadership and market position",
+          "Owned the cell end to end: design, implementation, and commissioning",
+          "Built for aluminum and steel fence panels at an industry-leading fabricator",
+          "Cleared the line bottleneck so idle material moved to revenue faster",
+          "Throughput from ~15 to ~120 panels a day (~8×)",
+          "Reinforced the company's local market leadership",
         ],
       },
       {
         id: "temp-fence-ops",
-        title: "Temp Fence Ops",
+        title: "National Events Ops Platform",
         summary:
-          "Operations platform for a national temporary-fence contractor — jobs, inventory, BOM, and P&L in one system.",
+          "Operations platform for a National Events Contractor — jobs, inventory, BOM, and P&L in one system.",
         description:
-          "Designed and built an operations management platform for a national construction company specializing in temporary fence. Replaces spreadsheet/tribal-knowledge workflows with one system for yards, crews, and job economics — from quote-ready material lists through install, relocate, pickup, and closeout. Operators create/track jobs (install, relocate, site walk, cancelled), generate accurate multi-section bills of materials (panels, posts, gates including slide configs, chain-link, consumables), manage yard catalogs and inventory, capture labor and contacts, and see job-level P&L without double-counting materials. Built for multi-yard scale with shared catalog patterns, additive job types, and production-safe deploys.",
+          "Designed and built an operations management platform for a National Events Contractor. Replaces spreadsheet/tribal-knowledge workflows with one system for yards, crews, and job economics — from quote-ready material lists through install, relocate, pickup, and closeout. Operators create/track jobs (install, relocate, site walk, cancelled), generate accurate multi-section bills of materials (panels, posts, gates including slide configs, chain-link, consumables), manage yard catalogs and inventory, capture labor and contacts, and see job-level P&L without double-counting materials. Built for multi-yard scale with shared catalog patterns, additive job types, and production-safe deploys.",
         featured: true,
         tags: [
           "Next.js",
