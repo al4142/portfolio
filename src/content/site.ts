@@ -111,10 +111,10 @@ export const site: SiteContent = {
   shortName: "AL",
   role: "Python · AI · data",
   tagline:
-    "Technology-forward stack: AI-driven automation (n8n, APIs, agents, multi-model workflows), growing Python for financial data, plus SQL, Power BI, and pandas — on 15+ years of trade-ops experience.",
+    "AI-driven automation (n8n, APIs, agents, multi-model workflows), financial analysis and modeling, and data tools (Python, SQL, Power BI, pandas) — on 15+ years of trade ops.",
   location: "Miami Beach, FL",
   availability:
-    "AI + data mindset: agents, process automation, and financial datasets — not a side hobby on a finance resume.",
+    "Ops focus: frictionless process improvement — map bottlenecks, integrate systems, tighten controls.",
   email: "alex@4142mb.com",
   siteUrl: "https://4142mb.com",
   nav: [
@@ -134,7 +134,7 @@ export const site: SiteContent = {
   about: {
     title: "About",
     paragraphs: [
-      "I build AI-driven automation and a growing Python / data practice — n8n, APIs, agents, multi-model workflows, SQL, Power BI, and pandas. Trade operations is the domain behind that stack: 15+ years across hedge funds, credit, and asset management, full lifecycle (equities, fixed income, derivatives, FX including APAC), settlement, reconciliation, Bloomberg, and expert Excel.",
+      "I build AI-driven automation and a growing Python / data practice — n8n, APIs, agents, multi-model workflows, SQL, Power BI, and pandas. Trade operations is the domain behind that stack: 15+ years across hedge funds, credit, and asset management, full lifecycle (equities, fixed income, derivatives, FX), settlement, reconciliation, Bloomberg, and expert Excel.",
       "Same systems habit off the desk: a Fronius robotic welding cell (jig, robot, electrical, production rollout) and full-stack training at 4Geeks Academy (HTML, CSS, and Java — 2023, web fundamentals).",
       "I care about processes that stay understandable after the first year: clear controls, fewer manual breaks, and tools the team will actually use. Based in Miami Beach, I surf, compete in triathlons, and play tennis.",
     ],
@@ -147,14 +147,15 @@ export const site: SiteContent = {
   projects: {
     title: "Projects",
     intro:
-      "Case-study style write-up of a real build. Industrial automation from fixture design through production rollout.",
+      "Two case studies: a robotic welder that scaled fence-panel throughput, and an operations platform for jobs, inventory, BOM, and P&L.",
     items: [
       {
         id: "fronius-welder",
         title: "Fronius robotic welder",
-        summary: "Industrial automation — jig, robot, electrical, rollout.",
+        summary:
+          "Robotic welder for aluminum and steel fence panels — from ~15 to ~120 panels per day (~8× throughput).",
         description:
-          "I helped put together a Fronius robotic welding system and stayed in the work from overall design through implementation. The cell had to hold a part, weld it consistently, and survive a real shop floor — not a slide deck.",
+          "Designed, implemented, and commissioned a robotic welder for aluminum and steel fence panels for an industry-leading metal fabrication company. The cell removed production bottlenecks and improved throughput and scalability — from ~15 to ~120 panels per day (~8× throughput) — so idle material converted to revenue faster and the company strengthened its local leadership and market position.",
         featured: true,
         tags: [
           "Industrial automation",
@@ -164,10 +165,37 @@ export const site: SiteContent = {
           "Production rollout",
         ],
         highlights: [
-          "Mechanical fixture and jig design so parts locate repeatably for the weld path",
-          "Robotic cell layout and implementation around a Fronius welding system",
-          "Electrical integration so power, sensors, and controls behaved as one unit",
-          "Production rollout — from build to a cell the floor could actually run",
+          "Designed, implemented, and commissioned a robotic welder for aluminum and steel fence panels",
+          "Built for an industry-leading metal fabrication company",
+          "Removed production bottlenecks and improved scalability so idle material converted to revenue faster",
+          "Throughput from ~15 to ~120 panels per day (~8× throughput)",
+          "Strengthened the company's local leadership and market position",
+        ],
+      },
+      {
+        id: "temp-fence-ops",
+        title: "Temp Fence Ops",
+        summary:
+          "Operations platform for a national temporary-fence contractor — jobs, inventory, BOM, and P&L in one system.",
+        description:
+          "Designed and built an operations management platform for a national construction company specializing in temporary fence. Replaces spreadsheet/tribal-knowledge workflows with one system for yards, crews, and job economics — from quote-ready material lists through install, relocate, pickup, and closeout. Operators create/track jobs (install, relocate, site walk, cancelled), generate accurate multi-section bills of materials (panels, posts, gates including slide configs, chain-link, consumables), manage yard catalogs and inventory, capture labor and contacts, and see job-level P&L without double-counting materials. Built for multi-yard scale with shared catalog patterns, additive job types, and production-safe deploys.",
+        featured: true,
+        tags: [
+          "Next.js",
+          "TypeScript",
+          "PostgreSQL",
+          "Prisma",
+          "Operations",
+          "BOM",
+          "Inventory",
+        ],
+        highlights: [
+          "Job lifecycle including cancel with history",
+          "Rule-driven multi-section BOM",
+          "Multi-yard inventory and catalog seeding",
+          "Relocate and Site Walk job types",
+          "Operator P&L and contacts",
+          "Stack: Next.js, TypeScript, Prisma, Neon, and Vercel",
         ],
       },
     ],
