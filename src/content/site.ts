@@ -204,7 +204,7 @@ export const site: SiteContent = {
         summary:
           "End-to-end agentic loop for creator brand partnerships — negotiate, contract, briefing, calendar, and concepts — drafts for human approval, pricing rules in code.",
         description:
-          "Designed and built Brand Partnership Automation as a five-step agentic loop for the creator–brand deal lifecycle. Negotiate: email intake, spam/legit vetting, scope extraction, availability check, creator consult, then back-and-forth on rate and terms using a deterministic pricing rulebook (floors, usage multipliers, deliverable baselines). Contract: pull final agreed terms into an internal deal record and archive it. Briefing: request the campaign brief, or send a structured questionnaire when the brand has none. Calendar: share a preliminary timeline and keep a living content calendar as creative lands. Concepts: draft concept and script in the creator’s voice against the brief; route creator then brand approvals; apply feedback with clear change notes; support production through final go-live. After the initial vetting pass, every outbound is a draft a human approves and sends — nothing goes to a brand on its own. Shared deal tracker holds state across the email thread. Chat Interested / Pass / Approve-counter is the human-in-the-loop surface.",
+          "Designed and built Brand Partnership Automation as a five-step agentic loop for the creator–brand deal lifecycle. After the initial vetting pass, every outbound is a draft a human approves and sends — nothing goes to a brand on its own. Shared deal tracker holds state across the email thread. Chat Interested / Pass / Approve-counter is the human-in-the-loop surface.",
         featured: true,
         tags: [
           "n8n",
@@ -215,12 +215,12 @@ export const site: SiteContent = {
           "HITL",
         ],
         highlights: [
-          "Five-step loop: Negotiate → Contract → Briefing → Calendar → Concepts",
-          "Email intake + legit/spam vetting before any engagement",
-          "Deal tracker as shared state across email threads",
-          "Chat Interested / Pass / Approve-counter human-in-the-loop",
-          "Draft-only replies after vetting — never auto-send to brands",
-          "Pricing rulebook in config/code, not free-form LLM judgment",
+          "Negotiate: email intake, spam/legit vetting, scope extraction, availability check, creator consult, then rate and terms via a pricing rulebook (floors, usage multipliers, deliverable baselines)",
+          "Contract: pull final agreed terms into an internal deal record and archive it",
+          "Briefing: request the campaign brief, or send a structured questionnaire when the brand has none",
+          "Calendar: share a preliminary timeline and keep a living content calendar as creative lands",
+          "Concepts: draft concept and script in the creator’s voice; route creator then brand approvals; apply feedback with change notes; support through go-live",
+          "Draft-only after vetting — never auto-send to brands; pricing rulebook in code, not free-form LLM judgment",
         ],
       },
     ],
