@@ -174,11 +174,11 @@ export const site: SiteContent = {
       },
       {
         id: "temp-fence-ops",
-        title: "Temp Fence Ops",
+        title: "National Events Ops Platform",
         summary:
-          "Operations platform for a national temporary-fence contractor — jobs, inventory, BOM, and P&L in one system.",
+          "Operations platform for a National Events Contractor — jobs, inventory, BOM, and P&L in one system.",
         description:
-          "Designed and built an operations management platform for a national construction company specializing in temporary fence. Replaces spreadsheet/tribal-knowledge workflows with one system for yards, crews, and job economics — from quote-ready material lists through install, relocate, pickup, and closeout. Operators create/track jobs (install, relocate, site walk, cancelled), generate accurate multi-section bills of materials (panels, posts, gates including slide configs, chain-link, consumables), manage yard catalogs and inventory, capture labor and contacts, and see job-level P&L without double-counting materials. Built for multi-yard scale with shared catalog patterns, additive job types, and production-safe deploys.",
+          "Designed and built an operations management platform for a National Events Contractor. Replaces spreadsheet/tribal-knowledge workflows with one system for yards, crews, and job economics — from quote-ready material lists through install, relocate, pickup, and closeout. Operators create/track jobs (install, relocate, site walk, cancelled), generate accurate multi-section bills of materials (panels, posts, gates including slide configs, chain-link, consumables), manage yard catalogs and inventory, capture labor and contacts, and see job-level P&L without double-counting materials. Built for multi-yard scale with shared catalog patterns, additive job types, and production-safe deploys.",
         featured: true,
         tags: [
           "Next.js",
