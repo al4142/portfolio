@@ -1,39 +1,71 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import { site } from "@/content/site";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
-const plexSans = IBM_Plex_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-sans",
+  variable: "--font-inter",
   display: "swap",
 });
 
-const plexMono = IBM_Plex_Mono({
+const interTight = Inter_Tight({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
+  variable: "--font-inter-tight",
   display: "swap",
 });
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
+const title = `${site.name} — ${site.role}`;
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.role}`,
+    default: title,
     template: `%s — ${site.name}`,
   },
   description: site.tagline,
-  metadataBase: new URL(site.siteUrl),
+  authors: [{ name: site.name }],
   openGraph: {
-    title: `${site.name} — ${site.role}`,
+    title,
     description: site.tagline,
     type: "website",
     locale: "en_US",
   },
+  twitter: {
+    card: "summary",
+    title,
+    description: site.tagline,
+  },
+  other: {
+    email: site.email,
+    "reply-to": site.email,
+  },
 };
 
-const themeInit = `(function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark");}catch(e){}})();`;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  email: site.email,
+  jobTitle: "Founder",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Miami Beach",
+    addressRegion: "Florida",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: "Stannos",
+    url: site.stannosUrl,
+    email: site.email,
+  },
+};
 
 export default function RootLayout({
   children,
@@ -43,14 +75,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plexSans.variable} ${plexMono.variable}`}
-      suppressHydrationWarning
+      className={`${inter.variable} ${interTight.variable} ${jetbrains.variable}`}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-      </head>
-      <body className="relative min-h-dvh antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="min-h-dvh antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
       </body>
     </html>
   );
