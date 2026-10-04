@@ -125,11 +125,12 @@ export const site: SiteContent = {
         id: "fund-trading-operations",
         title: "Fund trading operations platform",
         client: "A multi-trader fund",
-        result: "41% lower administrative costs",
+        result:
+          "Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers",
         details: [
-          "Daily profit and loss splits automated across every account.",
-          "Prime broker and settlement files generated automatically.",
+          "Prime broker files generated with no manual work.",
           "Same-day reconciliation with fewer settlement breaks.",
+          "41% lower administrative costs.",
         ],
       },
       {
@@ -201,7 +202,7 @@ export const site: SiteContent = {
         company: "Napeague Capital",
         dates: "2005–Dec 2015",
         summary:
-          "Built a trade settlement and profit and loss platform across 400+ accounts, with 41% lower administrative costs.",
+          "Built automated trade settlement, daily profit and loss across 400+ accounts and multiple brokers, and prime broker files generated with no manual work.",
       },
     ],
   },
