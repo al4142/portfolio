@@ -1,8 +1,6 @@
 import { site } from "@/content/site";
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="border-t border-line">
       <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
@@ -14,7 +12,7 @@ export function Footer() {
           >
             {site.email}
           </a>
-          <p>© {year} {site.name}</p>
+          <p>© 2026 {site.name}</p>
         </div>
       </div>
     </footer>
