@@ -8,329 +8,221 @@ export type SocialLink = {
   href: string;
 };
 
-export type ProjectLink = {
-  label: string;
-  href: string;
-};
-
-export type Project = {
+export type CaseStudy = {
   id: string;
   title: string;
-  summary: string;
-  description: string;
-  year?: string;
-  featured?: boolean;
-  tags: string[];
-  highlights?: string[];
-  links?: ProjectLink[];
+  client: string;
+  result: string;
+  details: string[];
 };
 
 export type ExperienceItem = {
-  company: string;
   role: string;
+  company: string;
   dates: string;
-  bullets: string[];
+  summary?: string;
+  href?: string;
 };
 
 export type EducationItem = {
   school: string;
   credential: string;
   dates: string;
-  detail?: string;
-  href?: string;
-};
-
-export type SkillGroup = {
-  title: string;
-  items: string[];
 };
 
 export type SiteContent = {
   name: string;
-  shortName: string;
   role: string;
   tagline: string;
-  /** City-level only (e.g. Miami Beach, FL). Never a street address. */
+  /** City-level only. Never a street address or phone number. */
   location: string;
-  availability: string;
-  /** Public contact channel. Do not add a phone number to this site. */
   email: string;
-  siteUrl: string;
+  stannosUrl: string;
   nav: NavItem[];
   social: SocialLink[];
   hero: {
     eyebrow: string;
     headline: string;
+    message: string;
     ctaPrimary: { label: string; href: string };
     ctaSecondary: { label: string; href: string };
   };
   about: {
     title: string;
     paragraphs: string[];
-    facts: { label: string; value: string }[];
   };
-  projects: {
+  work: {
     title: string;
     intro: string;
-    items: Project[];
+    items: CaseStudy[];
   };
   experience: {
     title: string;
-    intro: string;
     items: ExperienceItem[];
   };
   education: {
     title: string;
-    intro: string;
     items: EducationItem[];
-  };
-  skills: {
-    title: string;
-    intro: string;
-    featured: string[];
-    groups: SkillGroup[];
   };
   contact: {
     title: string;
     intro: string;
-    formNote: string;
-    successTitle: string;
-    successBody: string;
-  };
-  footer: {
-    note: string;
   };
 };
 
 /**
- * Public site copy. Contact is email only (`alex@4142mb.com`).
+ * Public site copy. Contact is email only (info@stannos.com).
  * Keep location at city level. Do not add a phone number or street address.
  */
 export const site: SiteContent = {
   name: "Alex Lopez",
-  shortName: "AL",
-  role: "Python · AI · data",
+  role: "Fund operator turned builder",
   tagline:
-    "AI-driven automation (n8n, APIs, agents, multi-model workflows), financial analysis and modeling, and data tools (Python, SQL, Power BI, pandas) — on 15+ years of trade ops.",
+    "A fund operator turned builder. 15 years running fund operations, now fixing operations from the floor up for funds, operating businesses, and robotics.",
   location: "Miami Beach, FL",
-  availability:
-    "Ops focus: frictionless process improvement — map bottlenecks, integrate systems, tighten controls.",
-  email: "alex@4142mb.com",
-  siteUrl: "https://4142mb.com",
+  email: "info@stannos.com",
+  stannosUrl: "https://stannos.com",
   nav: [
     { label: "About", href: "#about" },
-    { label: "Projects", href: "#work" },
-    { label: "Skills", href: "#skills" },
+    { label: "Work", href: "#work" },
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
-  social: [{ label: "Email", href: "mailto:alex@4142mb.com" }],
+  social: [{ label: "Email", href: "mailto:info@stannos.com" }],
   hero: {
-    eyebrow: "alex.lopez // miami-beach",
-    headline: "Building with Python, AI, and data.",
-    ctaPrimary: { label: "View projects", href: "#work" },
-    ctaSecondary: { label: "Contact", href: "#contact" },
+    eyebrow: "Founder, Stannos",
+    headline: "Alex Lopez",
+    message:
+      "A fund operator turned builder. 15 years running fund operations, now fixing operations from the floor up for funds, operating businesses, and robotics.",
+    ctaPrimary: { label: "Stannos", href: "https://stannos.com" },
+    ctaSecondary: {
+      label: "info@stannos.com",
+      href: "mailto:info@stannos.com",
+    },
   },
   about: {
     title: "About",
     paragraphs: [
-      "I build AI-driven automation and a growing Python / data practice — n8n, APIs, agents, multi-model workflows, SQL, Power BI, and pandas. Trade operations is the domain behind that stack: 15+ years across hedge funds, credit, and asset management, full lifecycle (equities, fixed income, derivatives, FX), settlement, reconciliation, Bloomberg.",
-      "Same systems habit off the desk: a Fronius robotic welding cell (jig, robot, electrical, production rollout) and full-stack training at 4Geeks Academy (HTML, CSS, and Java — 2023, web fundamentals).",
-      "I care about processes that stay understandable after the first year: clear controls, fewer manual breaks, and tools the team will actually use. Based in Miami Beach, I surf, compete in triathlons, and play tennis.",
-    ],
-    facts: [
-      { label: "Based", value: "Miami Beach, FL" },
-      { label: "Focus", value: "Python, AI, data" },
-      { label: "Background", value: "Hedge funds, credit, AM" },
+      "I run Stannos and still work operations from the floor, with the people doing the work. Python, automation, and reporting for funds, operating businesses, and robotics.",
+      "Based in Miami Beach, I surf, compete in triathlons, and play tennis.",
     ],
   },
-  projects: {
-    title: "Projects",
-    intro:
-      "Three case studies: a robotic welder that scaled fence-panel throughput, an operations platform for jobs, inventory, BOM, and P&L, and brand-partnership automation for creator deals.",
+  work: {
+    title: "Work",
+    intro: "Four case studies.",
     items: [
       {
-        id: "fronius-welder",
-        title: "Fronius robotic welder",
-        summary:
-          "Robotic welder for aluminum and steel fence panels — from ~15 to ~120 panels a day (~8×).",
-        description:
-          "Designed, implemented, and commissioned a robotic welding cell for aluminum and steel fence panels at an industry-leading metal fabricator. The cell cleared the production bottleneck and lifted output from ~15 to ~120 panels a day (~8×), turning idle stock into shipped product faster and reinforcing the company's lead in the local market.",
-        featured: true,
-        tags: [
-          "Industrial automation",
-          "Jig design",
-          "Robotics",
-          "Electrical",
-          "Production rollout",
-        ],
-        highlights: [
-          "Owned the cell end to end: design, implementation, and commissioning",
-          "Built for aluminum and steel fence panels at an industry-leading fabricator",
-          "Cleared the line bottleneck so idle material moved to revenue faster",
-          "Throughput from ~15 to ~120 panels a day (~8×)",
-          "Reinforced the company's local market leadership",
+        id: "robotic-welding-cell",
+        title: "Robotic welding cell",
+        client: "Manufacturing",
+        result: "Cycle time from 28 to 3 minutes",
+        details: [
+          "About 9x the output from one cell.",
+          "The same weld every time.",
         ],
       },
       {
-        id: "temp-fence-ops",
-        title: "National Events Ops Platform",
-        summary:
-          "Operations platform for a National Events Contractor — jobs, inventory, BOM, and P&L in one system.",
-        description:
-          "Designed and built an operations management platform for a National Events Contractor. Replaces spreadsheet/tribal-knowledge workflows with one system for yards, crews, and job economics — from quote-ready material lists through install, relocate, pickup, and closeout. Operators create/track jobs (install, relocate, site walk, cancelled), generate accurate multi-section bills of materials (panels, posts, gates including slide configs, chain-link, consumables), manage yard catalogs and inventory, capture labor and contacts, and see job-level P&L without double-counting materials. Built for multi-yard scale with shared catalog patterns, additive job types, and production-safe deploys.",
-        featured: true,
-        tags: [
-          "Next.js",
-          "TypeScript",
-          "PostgreSQL",
-          "Prisma",
-          "Operations",
-          "BOM",
-          "Inventory",
+        id: "fund-trading-operations",
+        title: "Fund trading operations platform",
+        client: "A multi-trader fund",
+        result:
+          "Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers",
+        details: [
+          "Prime broker files generated with no manual work.",
+          "Same-day reconciliation with fewer settlement breaks.",
+          "41% lower administrative costs.",
         ],
-        highlights: [
-          "Job lifecycle including cancel with history",
-          "Rule-driven multi-section BOM",
-          "Multi-yard inventory and catalog seeding",
-          "Relocate and Site Walk job types",
-          "Operator P&L and contacts",
-          "Stack: Next.js, TypeScript, Prisma, Neon, and Vercel",
+      },
+      {
+        id: "field-operations",
+        title: "Field operations platform",
+        client: "A national site services provider",
+        result: "Project-level profit and loss with no double counting",
+        details: [
+          "Project lifecycle from site walk to close-out.",
+          "Crew scheduling across projects and yards.",
+          "Live inventory tied to each yard.",
+          "Automated bills of materials.",
+          "Work-order tracking.",
+          "Project-level profit and loss with no double counting.",
         ],
       },
       {
         id: "brand-partnership-automation",
-        title: "Brand Partnership Automation",
-        summary:
-          "End-to-end agentic loop for creator brand partnerships — negotiate, contract, briefing, calendar, and concepts — drafts for human approval, pricing rules in code.",
-        description:
-          "Designed and built Brand Partnership Automation as a five-step agentic loop for the creator–brand deal lifecycle. After the initial vetting pass, every outbound is a draft a human approves and sends — nothing goes to a brand on its own. Shared deal tracker holds state across the email thread. Chat Interested / Pass / Approve-counter is the human-in-the-loop surface.",
-        featured: true,
-        tags: [
-          "n8n",
-          "email",
-          "deal tracker",
-          "chat approvals",
-          "AI agents",
-          "HITL",
-        ],
-        highlights: [
-          "Negotiate: email intake, spam/legit vetting, scope extraction, availability check, creator consult, then rate and terms via a pricing rulebook (floors, usage multipliers, deliverable baselines)",
-          "Contract: pull final agreed terms into an internal deal record and archive it",
-          "Briefing: request the campaign brief, or send a structured questionnaire when the brand has none",
-          "Calendar: share a preliminary timeline and keep a living content calendar as creative lands",
-          "Concepts: draft concept and script in the creator’s voice; route creator then brand approvals; apply feedback with change notes; support through go-live",
-          "Draft-only after vetting — never auto-send to brands; pricing rulebook in code, not free-form LLM judgment",
+        title: "Brand partnership automation",
+        client:
+          "A creator marketing agency managing hundreds of creators and brands",
+        result: "Inbox to agreed terms",
+        details: [
+          "AI drafts counteroffers and a person approves each one.",
         ],
       },
     ],
   },
   experience: {
     title: "Experience",
-    intro: "Domain context. Titles and dates as on the resume.",
     items: [
       {
+        role: "Founder",
+        company: "Stannos",
+        dates: "2025–present",
+        href: "https://stannos.com",
+      },
+      {
+        role: "Senior Project Manager",
         company: "Eastern Harbour Group",
-        role: "Senior Project Manager, Accounting & Operations",
-        dates: "Jan 2023 – Present",
-        bullets: [
-          "Accounting/ops projects across the trade lifecycle; process and automation design",
-        ],
+        dates: "2023–present",
+        summary: "Accounting and operations.",
       },
       {
-        company: "Newland Capital Group",
         role: "Senior Accounting Analyst",
+        company: "Newland Capital",
         dates: "Feb 2022 – Jan 2023",
-        bullets: ["Investment-ops accounting: settlement, reconciliation, reporting"],
+        summary: "An industrial real estate fund.",
       },
       {
-        company: "Inflo Capital Partners",
-        role: "Director, Finance and Trading Operations",
-        dates: "Apr 2020 – Jan 2022",
-        bullets: ["Finance and trading ops: trade support, settlement, controls"],
+        role: "Director of Finance & Trading Operations",
+        company: "A multi-strategy hedge fund",
+        dates: "2020–2022",
       },
       {
+        role: "Vice President, Special Assets",
         company: "TCA Global Credit Master Fund",
-        role: "VP Special Assets / CRO",
-        dates: "Nov 2017 – Feb 2020",
-        bullets: ["Special assets and CRO — credit-fund ops and risk processes"],
+        dates: "Nov 2016–Feb 2020",
+        summary:
+          "Asset manager across the fund's portfolio, including the hotel sale and the operating businesses the fund took over.",
       },
       {
-        company: "CRL Management / Napeague Capital",
-        role: "Senior Analyst, Trading and Operations",
-        dates: "Aug 2005 – Nov 2017",
-        bullets: ["Trading and operations analyst; full lifecycle and desk-adjacent systems"],
+        role: "Trident Holding Group",
+        company: "A fund",
+        dates: "Dec 2015–Nov 2016",
+      },
+      {
+        role: "Senior Analyst, Trading & Operations",
+        company: "Napeague Capital",
+        dates: "2005–Dec 2015",
+        summary:
+          "Built automated trade settlement, daily profit and loss across 400+ accounts and multiple brokers, and prime broker files generated with no manual work.",
       },
     ],
   },
   education: {
-    title: "Education & training",
-    intro: "Finance degree, then a full-stack program focused on web fundamentals.",
+    title: "Education",
     items: [
       {
-        school: "Florida International University",
-        credential: "BBA, Finance",
-        dates: "Aug 2001 – May 2006",
-      },
-      {
         school: "4Geeks Academy",
-        credential: "Full-Stack Bootcamp",
+        credential: "Full-Stack Software Development Bootcamp",
         dates: "2023",
-        detail:
-          "HTML, CSS, and Java. This cohort was before the program’s later AI course — web fundamentals only.",
-        href: "https://fl.4geeksacademy.com/en/programs/full-stack",
-      },
-    ],
-  },
-  skills: {
-    title: "Skills",
-    intro:
-      "First-class: AI / Automation, Python, SQL, Power BI, and pandas. Then the desk tools and 4Geeks web training (HTML, CSS, Java).",
-    featured: [
-      "AI / Automation",
-      "Python",
-      "SQL",
-      "Power BI",
-      "pandas",
-    ],
-    groups: [
-      {
-        title: "AI / Automation",
-        items: [
-          "AI-driven automation & agents",
-          "n8n, APIs, multi-model workflows",
-          "Process automation",
-          "Python (growing)",
-        ],
       },
       {
-        title: "Data",
-        items: ["SQL", "Power BI", "pandas"],
-      },
-      {
-        title: "Markets & web",
-        items: [
-          "Trade ops & settlement",
-          "Bloomberg",
-          "CapitalIQ",
-          "QuickBooks",
-          "Leadership",
-          "HTML, CSS, Java",
-        ],
+        school: "Florida International University",
+        credential: "Bachelor of Business Administration in Finance",
+        dates: "2006",
       },
     ],
   },
   contact: {
-    title: "Let’s talk",
-    intro:
-      "Roles, operations problems, or a question about a project — email alex@4142mb.com. The form below stays in the browser and does not send to a server.",
-    formNote:
-      "Messages are not delivered anywhere. Use the email link if you want this to leave your machine.",
-    successTitle: "Saved locally — nothing was sent.",
-    successBody:
-      "This form does not post anywhere. Copy your note, or open the email link to send it for real.",
-  },
-  footer: {
-    note: "Edit src/content/site.ts to update copy, roles, and links. Built with Next.js, TypeScript, and Tailwind CSS.",
+    title: "Contact",
+    intro: "Email info@stannos.com.",
   },
 };

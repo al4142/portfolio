@@ -1,58 +1,34 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
-  --bg: #f3f3ef;
-  --bg-elevated: #e8e8e2;
-  --ink: #111111;
-  --ink-muted: #5a5a54;
-  --line: #cfcfc6;
-  --accent: #0f7a4a;
-  --accent-hover: #0b5f39;
-  --accent-soft: #d4f0e2;
-  --forest: #0f7a4a;
-  --highlight: #b8f0cf;
-  --grain: rgba(17, 17, 17, 0.04);
-}
-
-.dark {
-  --bg: #0b0c0b;
-  --bg-elevated: #151615;
-  --ink: #ecece6;
-  --ink-muted: #9b9b93;
-  --line: #2b2d2b;
-  --accent: #7ee0a3;
-  --accent-hover: #9aebba;
-  --accent-soft: #123322;
-  --forest: #7ee0a3;
-  --highlight: #1c3d2a;
-  --grain: rgba(236, 236, 230, 0.04);
+  --bg: #f6f8fc;
+  --ink: #0b1f3a;
+  --body: #425466;
+  --line: #e3e8ee;
+  --accent: #4f46e5;
+  --soft: #ece9fe;
+  --card: #ffffff;
+  --shadow: 0 1px 1px #0b1f3a0a, 0 6px 18px -6px #0b1f3a1f,
+    0 14px 32px -12px #32325d1a;
+  --grad: linear-gradient(100deg, #4f46e5 0%, #7c3aed 45%, #06b6d4 100%);
 }
 
 @theme inline {
   --color-bg: var(--bg);
-  --color-elevated: var(--bg-elevated);
   --color-ink: var(--ink);
-  --color-muted: var(--ink-muted);
+  --color-body: var(--body);
   --color-line: var(--line);
   --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
-  --color-accent-soft: var(--accent-soft);
-  --color-forest: var(--forest);
-  --color-highlight: var(--highlight);
-  --font-display: var(--font-sans);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --color-soft: var(--soft);
+  --color-card: var(--card);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
 html {
   scroll-behavior: smooth;
   color-scheme: light;
-}
-
-html.dark {
-  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -71,30 +47,12 @@ html.dark {
 
 body {
   background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-}
-
-body::before {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 56px 56px;
-  opacity: 0.28;
-  mask-image: radial-gradient(ellipse at top, #000 40%, transparent 75%);
-}
-
-.dark body::before {
-  opacity: 0.18;
+  color: var(--body);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 ::selection {
-  background: var(--highlight);
+  background: #ddd6fe;
   color: var(--ink);
 }
 
@@ -103,11 +61,60 @@ body::before {
   outline-offset: 3px;
 }
 
-.display {
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  letter-spacing: -0.04em;
+.hero-wash {
+  background:
+    radial-gradient(900px 420px at 88% -10%, rgba(124, 58, 237, 0.14), transparent 60%),
+    radial-gradient(720px 380px at 70% 0%, rgba(79, 70, 229, 0.1), transparent 58%),
+    radial-gradient(560px 320px at 100% 30%, rgba(6, 182, 212, 0.1), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
 }
 
-.mono {
-  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  display: inline-flex;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 9999px;
+  padding: 0 1.25rem;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--grad);
+  color: #fff;
+  box-shadow: 0 8px 24px -16px #4f46e58c;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }
