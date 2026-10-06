@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
+import { Skills } from "@/components/Skills";
 import { SkipLink } from "@/components/SkipLink";
 
 export default function HomePage() {
@@ -17,6 +18,7 @@ export default function HomePage() {
         <Hero />
         <About />
         <Projects />
+        <Skills />
         <Experience />
         <Education />
         <Contact />
