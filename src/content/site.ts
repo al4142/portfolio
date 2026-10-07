@@ -113,7 +113,7 @@ export const site: SiteContent = {
   shortName: "AL",
   role: "Fund operations and finance",
   tagline:
-    "15+ years running fund operations, now fixing operations from the floor up for funds, operating businesses, and robotics.",
+    "15+ years across hedge funds, private credit and real estate, building the systems behind fund operations.",
   location: "Miami Beach, Florida",
   availability: "Building the systems behind fund operations.",
   email: "alex@4142mb.com",
