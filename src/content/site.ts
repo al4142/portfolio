@@ -174,16 +174,16 @@ export const site: SiteContent = {
         id: "development-monitor",
         title: "Development monitor and lender draw reporting",
         summary:
-          "Project monitor and lender draw reporting for industrial real estate.",
+          "Project monitor and lender draw reporting for Class-A industrial developments.",
         description:
-          "Newland Capital Group. A development monitor for industrial real estate, with lender draw reporting driven from one invoice ledger.",
+          "Newland Capital Group. A development monitor for a portfolio of ground-up Class-A industrial developments of $150 million to $400 million each, with lender draw reporting driven from one invoice ledger.",
         featured: true,
         tags: ["Industrial real estate", "Development monitor", "Lender draw reporting"],
         highlights: [
           "Every invoice tagged to a draw and a budget line.",
           "Monthly draw packages and draw history for the lender.",
           "Budget versus funded, and cost to complete, kept current.",
-          "Lender and investor reporting on a set schedule.",
+          "Reporting to lenders and joint venture investors on a set schedule.",
         ],
       },
       {
@@ -255,7 +255,7 @@ export const site: SiteContent = {
         company: "Newland Capital Group",
         dates: "Feb 2022 – Jan 2023",
         bullets: [
-          "Investment operations accounting: settlement, reconciliation, reporting.",
+          "Managed, tracked and reported on ground-up Class-A industrial developments of $150 million to $400 million each, build-to-suit and speculative, for e-commerce and distribution tenants in major U.S. port markets. Built the development project monitor and lender draw reporting.",
         ],
       },
       {
