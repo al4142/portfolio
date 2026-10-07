@@ -17,10 +17,15 @@ export function Hero() {
             id="hero-heading"
             className="display mt-2 max-w-3xl text-[clamp(2.4rem,7vw,4.6rem)] leading-[1.05] font-semibold text-balance"
           >
-            {site.hero.headline}
+            {site.hero.headline.split(" | ").map((part, index) => (
+              <span key={part} className="whitespace-nowrap">
+                {index > 0 ? " | " : null}
+                {part}
+              </span>
+            ))}
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted text-pretty sm:text-lg">
-            {site.tagline}
+            {site.hero.subline}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             {site.hero.ctaPrimary.label ? (

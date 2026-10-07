@@ -20,20 +20,20 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.role}`,
+    default: `${site.name} — ${site.hero.headline}`,
     template: `%s — ${site.name}`,
   },
   description: site.tagline,
   authors: [{ name: site.name }],
   openGraph: {
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} — ${site.hero.headline}`,
     description: site.tagline,
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary",
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} — ${site.hero.headline}`,
     description: site.tagline,
   },
   other: {
