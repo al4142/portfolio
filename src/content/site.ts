@@ -61,6 +61,7 @@ export type SiteContent = {
   hero: {
     eyebrow: string;
     headline: string;
+    subline: string;
     ctaPrimary: { label: string; href: string };
     ctaSecondary: { label: string; href: string };
   };
@@ -110,12 +111,11 @@ export type SiteContent = {
 export const site: SiteContent = {
   name: "Alex Lopez",
   shortName: "AL",
-  role: "Fund Operations | Trading & Finance | Automation & AI",
+  role: "Fund operations and finance",
   tagline:
     "15+ years running fund operations, now fixing operations from the floor up for funds, operating businesses, and robotics.",
   location: "Miami Beach, Florida",
-  availability:
-    "Fixing operations from the floor up for funds, operating businesses, and robotics.",
+  availability: "Building the systems behind fund operations.",
   email: "alex@4142mb.com",
   nav: [
     { label: "About", href: "#about" },
@@ -127,7 +127,9 @@ export const site: SiteContent = {
   social: [{ label: "Email", href: "mailto:alex@4142mb.com" }],
   hero: {
     eyebrow: "",
-    headline: "A fund operator turned builder.",
+    headline: "Fund Operations | Trading & Finance | Automation & AI",
+    subline:
+      "15+ years across hedge funds, private credit and real estate, building the systems behind fund operations.",
     ctaPrimary: { label: "", href: "" },
     ctaSecondary: {
       label: "alex@4142mb.com",
