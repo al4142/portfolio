@@ -148,18 +148,8 @@ export const site: SiteContent = {
   },
   projects: {
     title: "Projects",
-    intro: "Four case studies.",
+    intro: "Five case studies.",
     items: [
-      {
-        id: "robotic-welding-cell",
-        title: "Robotic welding cell",
-        summary: "Cycle time from 28 to 3 minutes.",
-        description:
-          "Manufacturing. A robotic welding cell brought cycle time from 28 to 3 minutes, and the weld is the same every time.",
-        featured: true,
-        tags: ["Industrial automation", "Robotics", "Electrical"],
-        highlights: ["The same weld every time."],
-      },
       {
         id: "fund-trading-operations",
         title: "Fund trading operations platform",
@@ -173,6 +163,22 @@ export const site: SiteContent = {
           "Prime broker files generated with no manual work.",
           "Same-day reconciliation with fewer settlement breaks.",
           "41% lower administrative costs.",
+        ],
+      },
+      {
+        id: "development-monitor",
+        title: "Development monitor and lender draw reporting",
+        summary:
+          "Project monitor and lender draw reporting for industrial real estate.",
+        description:
+          "Newland Capital Group. A development monitor for industrial real estate, with lender draw reporting driven from one invoice ledger.",
+        featured: true,
+        tags: ["Industrial real estate", "Development monitor", "Lender draw reporting"],
+        highlights: [
+          "Every invoice tagged to a draw and a budget line.",
+          "Monthly draw packages and draw history for the lender.",
+          "Budget versus funded, and cost to complete, kept current.",
+          "Lender and investor reporting on a set schedule.",
         ],
       },
       {
@@ -203,6 +209,16 @@ export const site: SiteContent = {
         highlights: [
           "Artificial intelligence (AI) drafts counteroffers and a person approves each one.",
         ],
+      },
+      {
+        id: "robotic-welding-cell",
+        title: "Robotic welding cell",
+        summary: "Cycle time from 28 to 3 minutes.",
+        description:
+          "Manufacturing. A robotic welding cell brought cycle time from 28 to 3 minutes, and the weld is the same every time.",
+        featured: true,
+        tags: ["Industrial automation", "Robotics", "Electrical"],
+        highlights: ["The same weld every time."],
       },
     ],
   },
