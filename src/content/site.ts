@@ -183,7 +183,7 @@ export const site: SiteContent = {
           "Every invoice tagged to a draw and a budget line.",
           "Monthly draw packages and draw history for the lender.",
           "Budget versus funded, and cost to complete, kept current.",
-          "Reporting to lenders and joint venture investors on a set schedule.",
+          "Reporting to lenders and joint venture investors.",
         ],
       },
       {
