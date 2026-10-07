@@ -156,12 +156,13 @@ export const site: SiteContent = {
         summary:
           "Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers.",
         description:
-          "A multi-trader fund. Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers, with prime broker files generated with no manual work.",
+          "A multi-trader fund. Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers, with prime broker files generated with no manual work. The same daily data supports screening and analysis of deals, plus portfolio exposure and performance views.",
         featured: true,
         tags: ["Fund operations", "Settlement", "Reporting"],
         highlights: [
           "Prime broker files generated with no manual work.",
           "Same-day reconciliation with fewer settlement breaks.",
+          "Screening and analysis of deals, plus portfolio exposure and performance views on the same daily data.",
           "41% lower administrative costs.",
         ],
       },
@@ -201,12 +202,18 @@ export const site: SiteContent = {
       {
         id: "brand-collaboration",
         title: "Brand collaboration automation",
-        summary: "Inbox to agreed terms.",
+        summary: "Creator intake through the content calendar.",
         description:
-          "A creator marketing agency managing hundreds of creators and brands.",
+          "Creator intake, negotiated deal terms, and contract generation. A deal tracker holds milestones, with a posting and content calendar and a dashboard.",
         featured: true,
-        tags: ["Automation", "Approvals"],
+        tags: ["Deal tracker", "Contracts", "Content calendar"],
         highlights: [
+          "Creator intake.",
+          "Negotiated deal terms.",
+          "Contract generation.",
+          "Deal tracker with milestones.",
+          "Posting and content calendar.",
+          "Dashboard.",
           "Artificial intelligence (AI) drafts counteroffers and a person approves each one.",
         ],
       },
@@ -215,10 +222,16 @@ export const site: SiteContent = {
         title: "Robotic welding cell",
         summary: "Cycle time from 28 to 3 minutes.",
         description:
-          "Manufacturing. A robotic welding cell brought cycle time from 28 to 3 minutes, and the weld is the same every time.",
+          "Manufacturing. Robot programming, a custom jig for fixturing, and an operator workflow. The weld is the same every time. Cycle time from 28 to 3 minutes.",
         featured: true,
-        tags: ["Industrial automation", "Robotics", "Electrical"],
-        highlights: ["The same weld every time."],
+        tags: ["Robot programming", "Fixturing", "Robotics"],
+        highlights: [
+          "Robot programming.",
+          "Custom jig for fixturing.",
+          "The same weld every time.",
+          "An operator workflow for the cell.",
+          "Cycle time from 28 to 3 minutes.",
+        ],
       },
     ],
   },
@@ -238,7 +251,7 @@ export const site: SiteContent = {
         company: "Eastern Harbour Group",
         dates: "Jan 2023 – Present",
         bullets: [
-          "Accounting and operations projects across the trade lifecycle; process and automation design.",
+          "Accounting and operations projects across the project lifecycle; process and automation design.",
         ],
       },
       {
@@ -287,7 +300,7 @@ export const site: SiteContent = {
       {
         school: "4Geeks Academy",
         credential: "Full-Stack Bootcamp",
-        dates: "2023",
+        dates: "2021",
       },
     ],
   },
