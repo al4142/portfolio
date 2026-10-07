@@ -110,7 +110,7 @@ export type SiteContent = {
 export const site: SiteContent = {
   name: "Alex Lopez",
   shortName: "AL",
-  role: "Fund operator turned builder",
+  role: "Fund Operations | Trading & Finance | Automation & AI",
   tagline:
     "15+ years running fund operations, now fixing operations from the floor up for funds, operating businesses, and robotics.",
   location: "Miami Beach, Florida",
@@ -137,7 +137,8 @@ export const site: SiteContent = {
   about: {
     title: "About",
     paragraphs: [
-      "Over 15+ years running operations for hedge funds, private credit and real estate funds, I've grown with the technology, from managing trades and portfolios to building the systems behind them: automated trade settlement, daily profit and loss across 400+ accounts, and reporting that runs itself. That path gave me hands-on, multi-vertical experience across fund finance, fund operations, real estate funds and operating businesses. Along the way I've put AI to work inside operations: running private, open-weight models on a firm's own hardware so fund data stays in-house, and building AI agents that draft documents, extract terms and prepare reports, with a person approving every step. Now I want to bring it back to a fund, leading operations and building the automation that lets a team scale without adding headcount.",
+      "Fund operator turned technology builder with 15+ years of experience across hedge funds, private credit, and real estate. I've led trading, finance, and fund operations while building the systems behind them—from automated trade settlement and daily profit and loss across 400+ accounts to AI-powered workflows and reporting.",
+      "I bring a combination of hands-on fund expertise and technical execution, using Python, automation, and private AI to eliminate manual work, strengthen controls, and help investment teams scale without adding unnecessary headcount.",
       "Based in Miami Beach, I surf, compete in triathlons, and play tennis.",
     ],
     facts: [
@@ -271,7 +272,7 @@ export const site: SiteContent = {
         company: "TCA Global Credit Master Fund",
         dates: "Nov 2017 – Feb 2020",
         bullets: [
-          "Asset manager across the fund's portfolio, including the hotel sale and the operating businesses the fund took over.",
+          "Asset manager across the portfolio of a $500 million private credit fund (assets under management), including the hotel sale and the operating businesses the fund took over.",
         ],
       },
       {
@@ -279,7 +280,7 @@ export const site: SiteContent = {
         company: "CRL Management / Napeague Capital",
         dates: "Aug 2005 – Nov 2017",
         bullets: [
-          "Built automated trade settlement, daily profit and loss across 400+ accounts and multiple brokers, and prime broker files generated with no manual work.",
+          "Built automated trade settlement, daily profit and loss across 400+ accounts and multiple brokers, and prime broker files generated with no manual work, for a $500 million fund (assets under management).",
         ],
       },
     ],
