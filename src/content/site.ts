@@ -103,7 +103,7 @@ export type SiteContent = {
 };
 
 /**
- * Public site copy. Contact is email only (info@stannos.com).
+ * Public site copy. Contact is email only (alex@4142mb.com).
  * Experience entries live in `experience.items` below.
  * Keep location at city level. Do not add a phone number or street address.
  */
@@ -116,7 +116,7 @@ export const site: SiteContent = {
   location: "Miami Beach, Florida",
   availability:
     "Fixing operations from the floor up for funds, operating businesses, and robotics.",
-  email: "info@stannos.com",
+  email: "alex@4142mb.com",
   nav: [
     { label: "About", href: "#about" },
     { label: "Projects", href: "#work" },
@@ -124,26 +124,30 @@ export const site: SiteContent = {
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
-  social: [{ label: "Email", href: "mailto:info@stannos.com" }],
+  social: [{ label: "Email", href: "mailto:alex@4142mb.com" }],
   hero: {
-    eyebrow: "founder · stannos",
+    eyebrow: "",
     headline: "A fund operator turned builder.",
-    ctaPrimary: { label: "Stannos", href: "https://stannos.com" },
+    ctaPrimary: { label: "", href: "" },
     ctaSecondary: {
-      label: "info@stannos.com",
-      href: "mailto:info@stannos.com",
+      label: "alex@4142mb.com",
+      href: "mailto:alex@4142mb.com",
     },
   },
   about: {
     title: "About",
     paragraphs: [
-      "I run Stannos and still work operations from the floor, with the people doing the work. Python, automation, and reporting for funds, operating businesses, and robotics.",
+      "Fund operator turned builder. Over 15+ years running operations for hedge funds, private credit and real estate funds, I've grown with the technology, from managing trades and portfolios to building the systems behind them: automated trade settlement, daily profit and loss across 400+ accounts, and reporting that runs itself. That path gave me hands-on, multi-vertical experience across fund finance, fund operations, real estate funds and operating businesses. Along the way I've put AI to work inside operations: running private, open-weight models on a firm's own hardware so fund data stays in-house, and building AI agents that draft documents, extract terms and prepare reports, with a person approving every step. Now I want to bring it back to a fund, leading operations and building the automation that lets a team scale without adding headcount.",
       "Based in Miami Beach, I surf, compete in triathlons, and play tennis.",
     ],
     facts: [
       { label: "Based", value: "Miami Beach, Florida" },
       { label: "Focus", value: "Fund operations" },
-      { label: "Now", value: "Founder, Stannos" },
+      {
+        label: "Now",
+        value:
+          "Senior Project Manager, Accounting & Operations, Eastern Harbour Group",
+      },
     ],
   },
   projects: {
@@ -214,7 +218,6 @@ export const site: SiteContent = {
           "Deal tracker with milestones.",
           "Posting and content calendar.",
           "Dashboard.",
-          "Artificial intelligence (AI) drafts counteroffers and a person approves each one.",
         ],
       },
       {
@@ -239,13 +242,6 @@ export const site: SiteContent = {
     title: "Experience",
     intro: "Newest first.",
     items: [
-      {
-        role: "Founder",
-        company: "Stannos",
-        dates: "2025 – Present",
-        href: "https://stannos.com",
-        bullets: [],
-      },
       {
         role: "Senior Project Manager, Accounting & Operations",
         company: "Eastern Harbour Group",
@@ -316,7 +312,13 @@ export const site: SiteContent = {
       },
       {
         title: "Building",
-        items: ["Python", "Automation", "Robotics"],
+        items: [
+          "Python",
+          "Automation",
+          "AI agents",
+          "Private AI (self-hosted models)",
+          "Robotics",
+        ],
       },
       {
         title: "Practice",
@@ -326,12 +328,12 @@ export const site: SiteContent = {
   },
   contact: {
     title: "Contact",
-    intro: "Email info@stannos.com.",
+    intro: "Email alex@4142mb.com.",
     formNote:
-      "This form stays in the browser and does not send. Use info@stannos.com for a reply.",
+      "This form stays in the browser and does not send. Use alex@4142mb.com for a reply.",
     successTitle: "Saved in the browser. Nothing was sent.",
     successBody:
-      "This form does not send. Email info@stannos.com if you want this to go out.",
+      "This form does not send. Email alex@4142mb.com if you want this to go out.",
   },
   footer: {
     note: "",

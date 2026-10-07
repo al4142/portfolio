@@ -47,17 +47,11 @@ const jsonLd = {
   "@type": "Person",
   name: site.name,
   email: site.email,
-  jobTitle: "Founder",
+  jobTitle: site.role,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Miami Beach",
     addressRegion: "Florida",
-  },
-  worksFor: {
-    "@type": "Organization",
-    name: "Stannos",
-    url: "https://stannos.com",
-    email: site.email,
   },
 };
 

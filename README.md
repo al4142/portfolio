@@ -1,6 +1,6 @@
 # Alex Lopez
 
-Personal site for Alex Lopez. Public contact is [info@stannos.com](mailto:info@stannos.com).
+Personal site for Alex Lopez. Public contact is [alex@4142mb.com](mailto:alex@4142mb.com).
 
 ## Run
 

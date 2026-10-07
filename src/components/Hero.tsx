@@ -9,9 +9,9 @@ export function Hero() {
     >
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[minmax(0,1fr)_15rem] lg:items-end">
         <div>
-          <p className="mono mb-5 text-xs text-accent">
-            {site.hero.eyebrow}
-          </p>
+          {site.hero.eyebrow ? (
+            <p className="mono mb-5 text-xs text-accent">{site.hero.eyebrow}</p>
+          ) : null}
           <p className="mono text-xs text-muted">{site.name}</p>
           <h1
             id="hero-heading"
@@ -23,18 +23,20 @@ export function Hero() {
             {site.tagline}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href={site.hero.ctaPrimary.href}
-              className="inline-flex h-11 items-center rounded-md bg-ink px-5 font-mono text-sm text-bg no-underline transition-colors hover:bg-accent"
-              {...(site.hero.ctaPrimary.href.startsWith("http")
-                ? { target: "_blank", rel: "noreferrer noopener" }
-                : {})}
-            >
-              {site.hero.ctaPrimary.label}
-              {site.hero.ctaPrimary.href.startsWith("http") ? (
-                <span className="sr-only"> (opens in a new tab)</span>
-              ) : null}
-            </a>
+            {site.hero.ctaPrimary.label ? (
+              <a
+                href={site.hero.ctaPrimary.href}
+                className="inline-flex h-11 items-center rounded-md bg-ink px-5 font-mono text-sm text-bg no-underline transition-colors hover:bg-accent"
+                {...(site.hero.ctaPrimary.href.startsWith("http")
+                  ? { target: "_blank", rel: "noreferrer noopener" }
+                  : {})}
+              >
+                {site.hero.ctaPrimary.label}
+                {site.hero.ctaPrimary.href.startsWith("http") ? (
+                  <span className="sr-only"> (opens in a new tab)</span>
+                ) : null}
+              </a>
+            ) : null}
             <a
               href={site.hero.ctaSecondary.href}
               className="inline-flex h-11 items-center rounded-md border border-line bg-elevated px-5 font-mono text-sm text-ink no-underline transition-colors hover:border-accent hover:text-accent"
