@@ -8,19 +8,30 @@ export function Hero() {
       className="relative overflow-hidden border-b border-line"
     >
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[minmax(0,1fr)_15rem] lg:items-end">
-        <div>
+        <div className="min-w-0">
           {site.hero.eyebrow ? (
             <p className="mono mb-5 text-xs text-accent">{site.hero.eyebrow}</p>
           ) : null}
           <p className="mono text-xs text-muted">{site.name}</p>
           <h1
             id="hero-heading"
-            className="display mt-2 max-w-3xl text-[clamp(2.4rem,7vw,4.6rem)] leading-[1.05] font-semibold text-balance"
+            className="display mt-2 max-w-full text-[clamp(1.75rem,1.15rem+1.5vw,2.5rem)] leading-[1.12] font-semibold"
           >
-            {site.hero.headline.split(" | ").map((part, index) => (
-              <span key={part} className="whitespace-nowrap">
-                {index > 0 ? " | " : null}
+            {site.hero.headline.split(" | ").map((part, index, parts) => (
+              <span
+                key={part}
+                className={
+                  index === parts.length - 1
+                    ? "block whitespace-nowrap"
+                    : "block whitespace-nowrap lg:inline"
+                }
+              >
                 {part}
+                {index < parts.length - 1 ? (
+                  <span className={index === 0 ? "max-lg:sr-only" : "sr-only"}>
+                    {" | "}
+                  </span>
+                ) : null}
               </span>
             ))}
           </h1>
