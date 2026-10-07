@@ -8,19 +8,28 @@ export type SocialLink = {
   href: string;
 };
 
-export type CaseStudy = {
+export type ProjectLink = {
+  label: string;
+  href: string;
+};
+
+export type Project = {
   id: string;
   title: string;
-  client: string;
-  result: string;
-  details: string[];
+  summary: string;
+  description: string;
+  year?: string;
+  featured?: boolean;
+  tags: string[];
+  highlights?: string[];
+  links?: ProjectLink[];
 };
 
 export type ExperienceItem = {
-  role: string;
   company: string;
+  role: string;
   dates: string;
-  summary?: string;
+  bullets: string[];
   href?: string;
 };
 
@@ -28,72 +37,97 @@ export type EducationItem = {
   school: string;
   credential: string;
   dates: string;
+  detail?: string;
+  href?: string;
+};
+
+export type SkillGroup = {
+  title: string;
+  items: string[];
 };
 
 export type SiteContent = {
   name: string;
+  shortName: string;
   role: string;
   tagline: string;
-  /** City-level only. Never a street address or phone number. */
+  /** City-level only. Never a street address. */
   location: string;
+  availability: string;
+  /** Public contact channel. Do not add a phone number to this site. */
   email: string;
-  stannosUrl: string;
   nav: NavItem[];
   social: SocialLink[];
   hero: {
     eyebrow: string;
     headline: string;
-    message: string;
     ctaPrimary: { label: string; href: string };
     ctaSecondary: { label: string; href: string };
   };
   about: {
     title: string;
     paragraphs: string[];
+    facts: { label: string; value: string }[];
   };
-  work: {
+  projects: {
     title: string;
     intro: string;
-    items: CaseStudy[];
+    items: Project[];
   };
   experience: {
     title: string;
+    intro: string;
     items: ExperienceItem[];
   };
   education: {
     title: string;
+    intro: string;
     items: EducationItem[];
+  };
+  skills: {
+    title: string;
+    intro: string;
+    featured: string[];
+    groups: SkillGroup[];
   };
   contact: {
     title: string;
     intro: string;
+    formNote: string;
+    successTitle: string;
+    successBody: string;
+  };
+  footer: {
+    note: string;
   };
 };
 
 /**
  * Public site copy. Contact is email only (info@stannos.com).
+ * Experience entries live in `experience.items` below.
  * Keep location at city level. Do not add a phone number or street address.
  */
 export const site: SiteContent = {
   name: "Alex Lopez",
+  shortName: "AL",
   role: "Fund operator turned builder",
   tagline:
-    "A fund operator turned builder. 15 years running fund operations, now fixing operations from the floor up for funds, operating businesses, and robotics.",
-  location: "Miami Beach, FL",
+    "15+ years running fund operations, now fixing operations from the floor up for funds, operating businesses, and robotics.",
+  location: "Miami Beach, Florida",
+  availability:
+    "Fixing operations from the floor up for funds, operating businesses, and robotics.",
   email: "info@stannos.com",
-  stannosUrl: "https://stannos.com",
   nav: [
     { label: "About", href: "#about" },
-    { label: "Work", href: "#work" },
+    { label: "Projects", href: "#work" },
+    { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
   social: [{ label: "Email", href: "mailto:info@stannos.com" }],
   hero: {
-    eyebrow: "Founder, Stannos",
-    headline: "Alex Lopez",
-    message:
-      "A fund operator turned builder. 15 years running fund operations, now fixing operations from the floor up for funds, operating businesses, and robotics.",
+    eyebrow: "founder · stannos",
+    headline: "A fund operator turned builder.",
     ctaPrimary: { label: "Stannos", href: "https://stannos.com" },
     ctaSecondary: {
       label: "info@stannos.com",
@@ -106,28 +140,36 @@ export const site: SiteContent = {
       "I run Stannos and still work operations from the floor, with the people doing the work. Python, automation, and reporting for funds, operating businesses, and robotics.",
       "Based in Miami Beach, I surf, compete in triathlons, and play tennis.",
     ],
+    facts: [
+      { label: "Based", value: "Miami Beach, Florida" },
+      { label: "Focus", value: "Fund operations" },
+      { label: "Now", value: "Founder, Stannos" },
+    ],
   },
-  work: {
-    title: "Work",
+  projects: {
+    title: "Projects",
     intro: "Four case studies.",
     items: [
       {
         id: "robotic-welding-cell",
         title: "Robotic welding cell",
-        client: "Manufacturing",
-        result: "Cycle time from 28 to 3 minutes",
-        details: [
-          "About 9x the output from one cell.",
-          "The same weld every time.",
-        ],
+        summary: "Cycle time from 28 to 3 minutes.",
+        description:
+          "Manufacturing. A robotic welding cell brought cycle time from 28 to 3 minutes, and the weld is the same every time.",
+        featured: true,
+        tags: ["Industrial automation", "Robotics", "Electrical"],
+        highlights: ["The same weld every time."],
       },
       {
         id: "fund-trading-operations",
         title: "Fund trading operations platform",
-        client: "A multi-trader fund",
-        result:
-          "Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers",
-        details: [
+        summary:
+          "Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers.",
+        description:
+          "A multi-trader fund. Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers, with prime broker files generated with no manual work.",
+        featured: true,
+        tags: ["Fund operations", "Settlement", "Reporting"],
+        highlights: [
           "Prime broker files generated with no manual work.",
           "Same-day reconciliation with fewer settlement breaks.",
           "41% lower administrative costs.",
@@ -136,9 +178,12 @@ export const site: SiteContent = {
       {
         id: "field-operations",
         title: "Field operations platform",
-        client: "A national site services provider",
-        result: "Project-level profit and loss with no double counting",
-        details: [
+        summary: "Project-level profit and loss with no double counting.",
+        description:
+          "A national site services provider. The project lifecycle runs from site walk to close-out, with crew scheduling, live inventory, automated bills of materials, and work-order tracking.",
+        featured: true,
+        tags: ["Field operations", "Inventory", "Scheduling"],
+        highlights: [
           "Project lifecycle from site walk to close-out.",
           "Crew scheduling across projects and yards.",
           "Live inventory tied to each yard.",
@@ -148,81 +193,118 @@ export const site: SiteContent = {
         ],
       },
       {
-        id: "brand-partnership-automation",
-        title: "Brand partnership automation",
-        client:
-          "A creator marketing agency managing hundreds of creators and brands",
-        result: "Inbox to agreed terms",
-        details: [
-          "AI drafts counteroffers and a person approves each one.",
+        id: "brand-collaboration",
+        title: "Brand collaboration automation",
+        summary: "Inbox to agreed terms.",
+        description:
+          "A creator marketing agency managing hundreds of creators and brands.",
+        featured: true,
+        tags: ["Automation", "Approvals"],
+        highlights: [
+          "Artificial intelligence (AI) drafts counteroffers and a person approves each one.",
         ],
       },
     ],
   },
   experience: {
     title: "Experience",
+    intro: "Newest first.",
     items: [
       {
         role: "Founder",
         company: "Stannos",
-        dates: "2025–present",
+        dates: "2025 – Present",
         href: "https://stannos.com",
+        bullets: [],
       },
       {
-        role: "Senior Project Manager",
+        role: "Senior Project Manager, Accounting & Operations",
         company: "Eastern Harbour Group",
-        dates: "2023–present",
-        summary: "Accounting and operations.",
+        dates: "Jan 2023 – Present",
+        bullets: [
+          "Accounting and operations projects across the trade lifecycle; process and automation design.",
+        ],
       },
       {
         role: "Senior Accounting Analyst",
-        company: "Newland Capital",
+        company: "Newland Capital Group",
         dates: "Feb 2022 – Jan 2023",
-        summary: "An industrial real estate fund.",
+        bullets: [
+          "Investment operations accounting: settlement, reconciliation, reporting.",
+        ],
       },
       {
-        role: "Director of Finance & Trading Operations",
-        company: "A multi-strategy hedge fund",
-        dates: "2020–2022",
+        role: "Director, Finance and Trading Operations",
+        company: "Inflo Capital Partners",
+        dates: "Apr 2020 – Jan 2022",
+        bullets: [
+          "Finance and trading operations: trade support, settlement, controls.",
+        ],
       },
       {
-        role: "Vice President, Special Assets",
+        role: "Vice President, Special Assets / Chief Restructuring Officer (CRO)",
         company: "TCA Global Credit Master Fund",
-        dates: "Nov 2016–Feb 2020",
-        summary:
+        dates: "Nov 2017 – Feb 2020",
+        bullets: [
           "Asset manager across the fund's portfolio, including the hotel sale and the operating businesses the fund took over.",
+        ],
       },
       {
-        role: "Trident Holding Group",
-        company: "A fund",
-        dates: "Dec 2015–Nov 2016",
-      },
-      {
-        role: "Senior Analyst, Trading & Operations",
-        company: "Napeague Capital",
-        dates: "2005–Dec 2015",
-        summary:
+        role: "Senior Analyst, Trading and Operations",
+        company: "CRL Management / Napeague Capital",
+        dates: "Aug 2005 – Nov 2017",
+        bullets: [
           "Built automated trade settlement, daily profit and loss across 400+ accounts and multiple brokers, and prime broker files generated with no manual work.",
+        ],
       },
     ],
   },
   education: {
     title: "Education",
+    intro: "Finance degree, then a full-stack bootcamp.",
     items: [
-      {
-        school: "4Geeks Academy",
-        credential: "Full-Stack Software Development Bootcamp",
-        dates: "2023",
-      },
       {
         school: "Florida International University",
         credential: "Bachelor of Business Administration in Finance",
         dates: "2006",
+      },
+      {
+        school: "4Geeks Academy",
+        credential: "Full-Stack Bootcamp",
+        dates: "2023",
+      },
+    ],
+  },
+  skills: {
+    title: "Skills",
+    intro:
+      "Fund operations, automation, and robotics. Python and reporting sit alongside the work.",
+    featured: ["Fund operations", "Automation", "Robotics"],
+    groups: [
+      {
+        title: "Operations",
+        items: ["Fund operations", "Settlement", "Reporting"],
+      },
+      {
+        title: "Building",
+        items: ["Python", "Automation", "Robotics"],
+      },
+      {
+        title: "Practice",
+        items: ["Process design", "Controls", "Field operations"],
       },
     ],
   },
   contact: {
     title: "Contact",
     intro: "Email info@stannos.com.",
+    formNote:
+      "This form stays in the browser and does not send. Use info@stannos.com for a reply.",
+    successTitle: "Saved in the browser. Nothing was sent.",
+    successBody:
+      "This form does not send. Email info@stannos.com if you want this to go out.",
+  },
+  footer: {
+    note: "",
   },
 };

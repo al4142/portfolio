@@ -5,32 +5,46 @@ export function Education() {
     <section
       id="education"
       aria-labelledby="education-heading"
-      className="scroll-mt-16"
+      className="border-b border-line"
     >
-      <div className="mx-auto max-w-5xl px-5 pb-10 sm:px-8">
-        <h2
-          id="education-heading"
-          className="font-display text-[28px] leading-8 font-extrabold tracking-[-0.02em] text-ink"
-        >
-          {site.education.title}
-        </h2>
-        <ul className="card mt-5 divide-y divide-line">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+        <div className="max-w-2xl">
+          <p className="mono text-xs text-accent">05 / education.json</p>
+          <h2
+            id="education-heading"
+            className="display mt-2 text-2xl font-semibold tracking-tight sm:text-3xl"
+          >
+            {site.education.title}
+          </h2>
+          <p className="mt-3 text-base leading-relaxed text-muted">
+            {site.education.intro}
+          </p>
+        </div>
+
+        <ul className="mt-8 grid gap-4 md:grid-cols-2">
           {site.education.items.map((item) => (
-            <li
-              key={item.school}
-              className="grid gap-1 px-5 py-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-baseline sm:gap-6"
-            >
-              <div>
-                <h3 className="font-display text-[16px] leading-6 font-bold text-ink">
-                  {item.school}
-                </h3>
-                <p className="mt-0.5 text-[14px] leading-5 text-body">
-                  {item.credential}
+            <li key={item.school} className="border border-line bg-elevated p-5">
+              <p className="mono text-[11px] text-muted">{item.dates}</p>
+              <h3 className="mt-2 text-lg font-medium tracking-tight">
+                {item.school}
+              </h3>
+              <p className="mt-1 text-sm text-forest">{item.credential}</p>
+              {item.detail ? (
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {item.detail}
                 </p>
-              </div>
-              <p className="font-mono text-[12px] font-medium text-body">
-                {item.dates}
-              </p>
+              ) : null}
+              {item.href ? (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mono mt-4 inline-block text-xs text-accent no-underline underline-offset-4 hover:underline"
+                >
+                  program reference
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              ) : null}
             </li>
           ))}
         </ul>

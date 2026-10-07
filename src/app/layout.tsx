@@ -1,45 +1,39 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { site } from "@/content/site";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
-const inter = Inter({
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600"],
+  variable: "--font-sans",
   display: "swap",
 });
 
-const interTight = Inter_Tight({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  variable: "--font-inter-tight",
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["500", "600"],
-  variable: "--font-jetbrains",
-  display: "swap",
-});
-
-const title = `${site.name} — ${site.role}`;
 
 export const metadata: Metadata = {
   title: {
-    default: title,
+    default: `${site.name} — ${site.role}`,
     template: `%s — ${site.name}`,
   },
   description: site.tagline,
   authors: [{ name: site.name }],
   openGraph: {
-    title,
+    title: `${site.name} — ${site.role}`,
     description: site.tagline,
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary",
-    title,
+    title: `${site.name} — ${site.role}`,
     description: site.tagline,
   },
   other: {
@@ -62,10 +56,12 @@ const jsonLd = {
   worksFor: {
     "@type": "Organization",
     name: "Stannos",
-    url: site.stannosUrl,
+    url: "https://stannos.com",
     email: site.email,
   },
 };
+
+const themeInit = `(function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&window.matchMedia("(prefers-color-scheme: dark)").matches);if(d)document.documentElement.classList.add("dark");}catch(e){}})();`;
 
 export default function RootLayout({
   children,
@@ -75,14 +71,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${interTight.variable} ${jetbrains.variable}`}
+      className={`${plexSans.variable} ${plexMono.variable}`}
+      suppressHydrationWarning
     >
-      <body className="min-h-dvh antialiased">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+      </head>
+      <body className="relative min-h-dvh antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
