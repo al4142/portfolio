@@ -103,7 +103,7 @@ export type SiteContent = {
 };
 
 /**
- * Public site copy. Contact is email only (info@stannos.com).
+ * Public site copy. Contact is email only (alex@4142mb.com).
  * Experience entries live in `experience.items` below.
  * Keep location at city level. Do not add a phone number or street address.
  */
@@ -116,7 +116,7 @@ export const site: SiteContent = {
   location: "Miami Beach, Florida",
   availability:
     "Fixing operations from the floor up for funds, operating businesses, and robotics.",
-  email: "info@stannos.com",
+  email: "alex@4142mb.com",
   nav: [
     { label: "About", href: "#about" },
     { label: "Projects", href: "#work" },
@@ -124,55 +124,66 @@ export const site: SiteContent = {
     { label: "Experience", href: "#experience" },
     { label: "Contact", href: "#contact" },
   ],
-  social: [{ label: "Email", href: "mailto:info@stannos.com" }],
+  social: [{ label: "Email", href: "mailto:alex@4142mb.com" }],
   hero: {
-    eyebrow: "founder · stannos",
+    eyebrow: "",
     headline: "A fund operator turned builder.",
-    ctaPrimary: { label: "Stannos", href: "https://stannos.com" },
+    ctaPrimary: { label: "", href: "" },
     ctaSecondary: {
-      label: "info@stannos.com",
-      href: "mailto:info@stannos.com",
+      label: "alex@4142mb.com",
+      href: "mailto:alex@4142mb.com",
     },
   },
   about: {
     title: "About",
     paragraphs: [
-      "I run Stannos and still work operations from the floor, with the people doing the work. Python, automation, and reporting for funds, operating businesses, and robotics.",
+      "Over 15+ years running operations for hedge funds, private credit and real estate funds, I've grown with the technology, from managing trades and portfolios to building the systems behind them: automated trade settlement, daily profit and loss across 400+ accounts, and reporting that runs itself. That path gave me hands-on, multi-vertical experience across fund finance, fund operations, real estate funds and operating businesses. Along the way I've put AI to work inside operations: running private, open-weight models on a firm's own hardware so fund data stays in-house, and building AI agents that draft documents, extract terms and prepare reports, with a person approving every step. Now I want to bring it back to a fund, leading operations and building the automation that lets a team scale without adding headcount.",
       "Based in Miami Beach, I surf, compete in triathlons, and play tennis.",
     ],
     facts: [
       { label: "Based", value: "Miami Beach, Florida" },
       { label: "Focus", value: "Fund operations" },
-      { label: "Now", value: "Founder, Stannos" },
+      {
+        label: "Now",
+        value:
+          "Senior Project Manager, Accounting & Operations, Eastern Harbour Group",
+      },
     ],
   },
   projects: {
     title: "Projects",
-    intro: "Four case studies.",
+    intro: "Five case studies.",
     items: [
-      {
-        id: "robotic-welding-cell",
-        title: "Robotic welding cell",
-        summary: "Cycle time from 28 to 3 minutes.",
-        description:
-          "Manufacturing. A robotic welding cell brought cycle time from 28 to 3 minutes, and the weld is the same every time.",
-        featured: true,
-        tags: ["Industrial automation", "Robotics", "Electrical"],
-        highlights: ["The same weld every time."],
-      },
       {
         id: "fund-trading-operations",
         title: "Fund trading operations platform",
         summary:
           "Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers.",
         description:
-          "A multi-trader fund. Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers, with prime broker files generated with no manual work.",
+          "A multi-trader fund. Automated trade settlement and daily profit and loss across 400+ accounts and multiple brokers, with prime broker files generated with no manual work. The same daily data supports screening and analysis of deals, plus portfolio exposure and performance views.",
         featured: true,
         tags: ["Fund operations", "Settlement", "Reporting"],
         highlights: [
           "Prime broker files generated with no manual work.",
           "Same-day reconciliation with fewer settlement breaks.",
+          "Screening and analysis of deals, plus portfolio exposure and performance views on the same daily data.",
           "41% lower administrative costs.",
+        ],
+      },
+      {
+        id: "development-monitor",
+        title: "Development monitor and lender draw reporting",
+        summary:
+          "Project monitor and lender draw reporting for industrial real estate.",
+        description:
+          "Newland Capital Group. A development monitor for industrial real estate, with lender draw reporting driven from one invoice ledger.",
+        featured: true,
+        tags: ["Industrial real estate", "Development monitor", "Lender draw reporting"],
+        highlights: [
+          "Every invoice tagged to a draw and a budget line.",
+          "Monthly draw packages and draw history for the lender.",
+          "Budget versus funded, and cost to complete, kept current.",
+          "Lender and investor reporting on a set schedule.",
         ],
       },
       {
@@ -195,13 +206,34 @@ export const site: SiteContent = {
       {
         id: "brand-collaboration",
         title: "Brand collaboration automation",
-        summary: "Inbox to agreed terms.",
+        summary: "Creator intake through the content calendar.",
         description:
-          "A creator marketing agency managing hundreds of creators and brands.",
+          "Creator intake, negotiated deal terms, and contract generation. A deal tracker holds milestones, with a posting and content calendar and a dashboard.",
         featured: true,
-        tags: ["Automation", "Approvals"],
+        tags: ["Deal tracker", "Contracts", "Content calendar"],
         highlights: [
-          "Artificial intelligence (AI) drafts counteroffers and a person approves each one.",
+          "Creator intake.",
+          "Negotiated deal terms.",
+          "Contract generation.",
+          "Deal tracker with milestones.",
+          "Posting and content calendar.",
+          "Dashboard.",
+        ],
+      },
+      {
+        id: "robotic-welding-cell",
+        title: "Robotic welding cell",
+        summary: "Cycle time from 28 to 3 minutes.",
+        description:
+          "Manufacturing. Robot programming, a custom jig for fixturing, and an operator workflow. The weld is the same every time. Cycle time from 28 to 3 minutes.",
+        featured: true,
+        tags: ["Robot programming", "Fixturing", "Robotics"],
+        highlights: [
+          "Robot programming.",
+          "Custom jig for fixturing.",
+          "The same weld every time.",
+          "An operator workflow for the cell.",
+          "Cycle time from 28 to 3 minutes.",
         ],
       },
     ],
@@ -211,18 +243,11 @@ export const site: SiteContent = {
     intro: "Newest first.",
     items: [
       {
-        role: "Founder",
-        company: "Stannos",
-        dates: "2025 – Present",
-        href: "https://stannos.com",
-        bullets: [],
-      },
-      {
         role: "Senior Project Manager, Accounting & Operations",
         company: "Eastern Harbour Group",
         dates: "Jan 2023 – Present",
         bullets: [
-          "Accounting and operations projects across the trade lifecycle; process and automation design.",
+          "Accounting and operations projects across the project lifecycle; process and automation design.",
         ],
       },
       {
@@ -271,7 +296,7 @@ export const site: SiteContent = {
       {
         school: "4Geeks Academy",
         credential: "Full-Stack Bootcamp",
-        dates: "2023",
+        dates: "2021",
       },
     ],
   },
@@ -287,7 +312,13 @@ export const site: SiteContent = {
       },
       {
         title: "Building",
-        items: ["Python", "Automation", "Robotics"],
+        items: [
+          "Python",
+          "Automation",
+          "AI agents",
+          "Private AI (self-hosted models)",
+          "Robotics",
+        ],
       },
       {
         title: "Practice",
@@ -297,12 +328,12 @@ export const site: SiteContent = {
   },
   contact: {
     title: "Contact",
-    intro: "Email info@stannos.com.",
+    intro: "Email alex@4142mb.com.",
     formNote:
-      "This form stays in the browser and does not send. Use info@stannos.com for a reply.",
+      "This form stays in the browser and does not send. Use alex@4142mb.com for a reply.",
     successTitle: "Saved in the browser. Nothing was sent.",
     successBody:
-      "This form does not send. Email info@stannos.com if you want this to go out.",
+      "This form does not send. Email alex@4142mb.com if you want this to go out.",
   },
   footer: {
     note: "",
