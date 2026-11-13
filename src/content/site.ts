@@ -149,7 +149,7 @@ export const site: SiteContent = {
       {
         label: "Now",
         value:
-          "Senior Project Manager, Accounting & Operations, Eastern Harbour Group",
+          "Director, Eastern Harbour Group",
       },
     ],
   },
@@ -246,7 +246,7 @@ export const site: SiteContent = {
     intro: "Newest first.",
     items: [
       {
-        role: "Senior Project Manager, Accounting & Operations",
+        role: "Director",
         company: "Eastern Harbour Group",
         dates: "Jan 2023 – Present",
         bullets: [
